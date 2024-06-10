@@ -40,13 +40,13 @@ MetaCerberus
 .. |Anaconda-Server License| image:: https://anaconda.org/bioconda/metacerberus/badges/license.svg
    :target: https://anaconda.org/bioconda/metacerberus      
 .. note:: MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
-:
+
 About
-------- 
+============== 
 MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). MetaCerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. image:: image.png
+.. image:: image.jpeg
    :height: 100px
    :width: 100px
    :align: center
@@ -61,10 +61,12 @@ Operating System
 * **Linux** 
 ~~~~~~~~~~~~
 
-`Here`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
 Other informative pages can be found `here`_ and `here`_.
+
 .. _here: https://ryanstutorials.net/linuxtutorial/
 .. _here: https://www.marquette.edu/high-performance-computing/linux-intro.php
 
@@ -72,7 +74,9 @@ Other informative pages can be found `here`_ and `here`_.
 ~~~~~~~~~~
 
 Click `here`_ for terminal basics.
+
 .. _here: https://support.apple.com/guide/terminal/welcome/mac
+
 * **Windows - MUST use Ubuntu**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -118,15 +122,15 @@ __Linux/OSX-64__
 In command line, type:
 
 .. codeblock::[bash]
-``conda install mamba``
+conda install mamba
 
 2. Install MetaCerberus with Mamba
 
 In command line, type:
 .. codeblock::[bash]
-``mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
+mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
 conda activate metacerberus
-metacerberus.py --setup``
+metacerberus.py --setup
 
 __OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
  
