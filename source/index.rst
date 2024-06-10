@@ -58,19 +58,19 @@ Operating System
 ~~~~~~~~~~~~~~~~~ 
 * Linux 
 
-`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
-Other informative pages can be found `here <https://ryanstutorials.net/linuxtutorial/>` and `here <https://www.marquette.edu/high-performance-computing/linux-intro.php>`.
+Other informative pages can be found `here <https://ryanstutorials.net/linuxtutorial/_>` and `here <https://www.marquette.edu/high-performance-computing/linux-intro.php_>`.
 
 * Mac
 
-Click `here <https://support.apple.com/guide/terminal/welcome/mac>` for terminal basics.
+Click `here <https://support.apple.com/guide/terminal/welcome/mac_>` for terminal basics.
 
 * Windows - MUST use Ubuntu
 
-Click `here <https://ubuntu.com/desktop/wsl>` for the Ubuntu download page, or download in the Microsoft store. 
+Click `here <https://ubuntu.com/desktop/wsl_>` for the Ubuntu download page, or download in the Microsoft store. 
 
-`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu. 
+`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu. 
 
 .. toctree::
    :maxdepth: 3
