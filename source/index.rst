@@ -50,7 +50,7 @@ MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenom
    :height: 100px
    :width: 100px
    :align: center
-   :target: (https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356)
+   :target: https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
 :
 General Terminal Command Line Links and Info for Novices
 =========================================================
@@ -61,11 +61,11 @@ Operating System
 * **Linux** 
 ~~~~~~~~~~~~
 
-`Here`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+Here_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
-Other informative pages can be found `here`_ and `here`_.
+Other informative pages can be found here_ and here_.
 
 .. _here: https://ryanstutorials.net/linuxtutorial/
 .. _here: https://www.marquette.edu/high-performance-computing/linux-intro.php
@@ -73,16 +73,18 @@ Other informative pages can be found `here`_ and `here`_.
 * **Mac**
 ~~~~~~~~~~
 
-Click `here`_ for terminal basics.
+Click here_ for terminal basics.
 
 .. _here: https://support.apple.com/guide/terminal/welcome/mac
 
 * **Windows - MUST use Ubuntu**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click `here <https://ubuntu.com/desktop/wsl_>` for the Ubuntu download page, or download in the Microsoft store. 
+Click here_ for the Ubuntu download page, or download in the Microsoft store.
+.. _here: https://ubuntu.com/desktop/wsl 
 
-`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+Here_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+.. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
 Installation
 =============
@@ -97,11 +99,11 @@ Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 In the command line, type: 
 
 .. codeblock:: [bash]
-``git clone https://github.com/raw-lab/MetaCerberus.git 
+git clone https://github.com/raw-lab/MetaCerberus.git 
 cd MetaCerberus
 bash install_metacerberus.sh
 conda activate MetaCerberus-1.3.0
-metacerberus.py --download``
+metacerberus.py --download
 
 
 Installing MetaCerberus 1.2.1 and below (due to current Mamba and Conda errors)
@@ -116,7 +118,7 @@ Option 1) Mamba
 
 * Mamba install from bioconda with all dependencies:
 
-__Linux/OSX-64__
+**Linux/OSX-64**
 1. Install Mamba using Conda
 
 In command line, type:
