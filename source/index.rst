@@ -65,9 +65,9 @@ Operating System
 
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
-Other informative pages can be found `here`_ and `here <marq_>`_.
+Other informative pages can be found `here <1_>`_ and `here <marq_>`_.
 
-.. _here: https://ryanstutorials.net/linuxtutorial/
+.. _1: https://ryanstutorials.net/linuxtutorial/
 .. _marq: https://www.marquette.edu/high-performance-computing/linux-intro.php
 
 * **Mac**
@@ -81,9 +81,11 @@ Click `here`_ for terminal basics.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Click `here`_ for the Ubuntu download page, or download in the Microsoft store.
+
 .. _here: https://ubuntu.com/desktop/wsl 
 
 `Here`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
 Installation
@@ -100,11 +102,11 @@ In the command line, type:
 
 ::
 
-git clone https://github.com/raw-lab/MetaCerberus.git 
-cd MetaCerberus
-bash install_metacerberus.sh
-conda activate MetaCerberus-1.3.0
-metacerberus.py --download
+  git clone https://github.com/raw-lab/MetaCerberus.git 
+  cd MetaCerberus
+  bash install_metacerberus.sh
+  conda activate MetaCerberus-1.3.0
+  metacerberus.py --download
 
 
 Installing MetaCerberus 1.2.1 and below (due to current Mamba and Conda errors)
@@ -126,19 +128,21 @@ Mamba install from bioconda with all dependencies:
 
 In command line, type:
 
-:: [bash]
-conda install mamba
+::
+
+  conda install mamba
 
 2. Install MetaCerberus with Mamba
 
 In command line, type:
+
 ::
 
-mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
-conda activate metacerberus
-metacerberus.py --setup
+   mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
+   conda activate metacerberus
+   metacerberus.py --setup
 
-OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
+OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
  
 1. Set up Conda environment
 
@@ -153,16 +157,15 @@ In command line, type:
 
 In command line, type:
 ::
-
-conda install -y -c conda-forge mamba python=3.10 "pydantic<2"
+  conda install -y -c conda-forge mamba python=3.10 "pydantic<2"
 
 3. Install MetaCerberus with Mamba
 
 In command line, type:
 ::
 
-  mamba install -y -c bioconda -c conda-forge metacerberus
-  metacerberus.py --setup
+   mamba install -y -c bioconda -c conda-forge metacerberus
+   metacerberus.py --setup
 
 
 .. note:: 
@@ -179,6 +182,8 @@ In command line, type:
 conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
 conda activate metacerberus
 metacerberus.py --setup
+
+
 
 .. toctree::
    :maxdepth: 5
