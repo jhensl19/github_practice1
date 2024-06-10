@@ -51,7 +51,7 @@ MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenom
    :width: 100px
    :align: center
    :target: https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
-:
+
 General Terminal Command Line Links and Info for Novices
 =========================================================
 The following are links to helpful webpages based on your operating system. These contain basic starter info for those who have no previous experience with terminals or commands. 
@@ -61,7 +61,7 @@ Operating System
 * **Linux** 
 ~~~~~~~~~~~~
 
-Here_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+Here_ , you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
@@ -73,7 +73,7 @@ Other informative pages can be found here_ and here_.
 * **Mac**
 ~~~~~~~~~~
 
-Click here_ for terminal basics.
+Click `here`_ for terminal basics.
 
 .. _here: https://support.apple.com/guide/terminal/welcome/mac
 
@@ -119,10 +119,10 @@ Option 1) Mamba
 * Mamba install from bioconda with all dependencies:
 
 **Linux/OSX-64**
+
 1. Install Mamba using Conda
 
 In command line, type:
-
 .. codeblock::[bash]
 conda install mamba
 
@@ -139,23 +139,26 @@ __OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
 1. Set up Conda environment
 
 In command line, type:
-.. codeblock::[bash]
-``conda create -y -n metacerberus
-conda activate metacerberus
-conda config --env --set subdir osx-64``
+::
+
+   conda create -y -n metacerberus
+   conda activate metacerberus
+   conda config --env --set subdir osx-64
 
 2. Install Mamba, Python, and Pydantic inside the environment
 
 In command line, type:
-.. codeblock::[bash]
+::
+
 ``conda install -y -c conda-forge mamba python=3.10 "pydantic<2"``
 
 3. Install MetaCerberus with Mamba
 
 In command line, type:
-.. codeblock::[bash]
-``mamba install -y -c bioconda -c conda-forge metacerberus
-metacerberus.py --setup``
+::
+
+  mamba install -y -c bioconda -c conda-forge metacerberus
+  metacerberus.py --setup``
 
 
 .. note:: 
@@ -166,10 +169,11 @@ Option 2) Anaconda - Linux/OSX-64 Only
 - Anaconda install from bioconda with all dependencies:
 
 In command line, type:
-.. codeblock::[bash]
-``conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
+::[bash]
+
+conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
 conda activate metacerberus
-metacerberus.py --setup``
+metacerberus.py --setup
 
 .. toctree::
    :maxdepth: 5
