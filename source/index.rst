@@ -38,17 +38,19 @@ MetaCerberus
    :target: https://anaconda.org/bioconda/metacerberus
 
 .. |Anaconda-Server License| image:: https://anaconda.org/bioconda/metacerberus/badges/license.svg
-   :target: https://anaconda.org/bioconda/metacerberus   
-   
-[!NOTE] 
- MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
+   :target: https://anaconda.org/bioconda/metacerberus      
+.. note:: MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
 
 About
 ------- 
 MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). MetaCerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. [image](https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356)
+.. image:: image.png
+   :height: 100px
+   :width: 100px
+   :align: center
+   :target: (https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356)
 
 General Terminal Command Line Links and Info for Novices
 ----------------------------------------------------------
@@ -56,13 +58,13 @@ The following are links to helpful webpages based on your operating system. Thes
 
 Operating System
 ~~~~~~~~~~~~~~~~~ 
-* Linux 
+* **Linux** 
 
 `Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
 Other informative pages can be found `here <https://ryanstutorials.net/linuxtutorial/_>` and `here <https://www.marquette.edu/high-performance-computing/linux-intro.php_>`.
 
-* Mac
+* **Mac**
 
 Click `here <https://support.apple.com/guide/terminal/welcome/mac_>` for terminal basics.
 
@@ -73,7 +75,7 @@ Click `here <https://ubuntu.com/desktop/wsl_>` for the Ubuntu download page, or 
 `Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu. 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 5
    :caption: Contents:
 
 
