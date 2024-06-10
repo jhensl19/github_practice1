@@ -60,22 +60,29 @@ Operating System
 ------------------ 
 * **Linux** 
 ~~~~~~~~~~~~
-`Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
-Other informative pages can be found `here <https://ryanstutorials.net/linuxtutorial/_>` and `here <https://www.marquette.edu/high-performance-computing/linux-intro.php_>`.
+`Here`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+.. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+
+Other informative pages can be found `here`_ and `here`_.
+.. _here: https://ryanstutorials.net/linuxtutorial/
+.. _here: https://www.marquette.edu/high-performance-computing/linux-intro.php
 
 * **Mac**
 ~~~~~~~~~~
-Click `here <https://support.apple.com/guide/terminal/welcome/mac_>` for terminal basics.
 
+Click `here`_ for terminal basics.
+.. _here: https://support.apple.com/guide/terminal/welcome/mac
 * **Windows - MUST use Ubuntu**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Click `here <https://ubuntu.com/desktop/wsl_>` for the Ubuntu download page, or download in the Microsoft store. 
 
 `Here <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_>`, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
 Installation
 =============
+
 Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 ---------------------------------------------------------------------------------
 .. important:: 
@@ -86,11 +93,11 @@ Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 In the command line, type: 
 
 .. codeblock:: [bash]
-git clone https://github.com/raw-lab/MetaCerberus.git 
+``git clone https://github.com/raw-lab/MetaCerberus.git 
 cd MetaCerberus
 bash install_metacerberus.sh
 conda activate MetaCerberus-1.3.0
-metacerberus.py --download
+metacerberus.py --download``
 
 
 Installing MetaCerberus 1.2.1 and below (due to current Mamba and Conda errors)
@@ -111,15 +118,15 @@ __Linux/OSX-64__
 In command line, type:
 
 .. codeblock::[bash]
-conda install mamba
+``conda install mamba``
 
 2. Install MetaCerberus with Mamba
 
 In command line, type:
 .. codeblock::[bash]
-mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
+``mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
 conda activate metacerberus
-metacerberus.py --setup
+metacerberus.py --setup``
 
 __OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
  
@@ -127,22 +134,22 @@ __OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
 
 In command line, type:
 .. codeblock::[bash]
-conda create -y -n metacerberus
+``conda create -y -n metacerberus
 conda activate metacerberus
-conda config --env --set subdir osx-64
+conda config --env --set subdir osx-64``
 
 2. Install Mamba, Python, and Pydantic inside the environment
 
 In command line, type:
 .. codeblock::[bash]
-conda install -y -c conda-forge mamba python=3.10 "pydantic<2"
+``conda install -y -c conda-forge mamba python=3.10 "pydantic<2"``
 
 3. Install MetaCerberus with Mamba
 
 In command line, type:
 .. codeblock::[bash]
-mamba install -y -c bioconda -c conda-forge metacerberus
-metacerberus.py --setup
+``mamba install -y -c bioconda -c conda-forge metacerberus
+metacerberus.py --setup``
 
 
 .. note:: 
@@ -154,9 +161,9 @@ Option 2) Anaconda - Linux/OSX-64 Only
 
 In command line, type:
 .. codeblock::[bash]
-conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
+``conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
 conda activate metacerberus
-metacerberus.py --setup
+metacerberus.py --setup``
 
 .. toctree::
    :maxdepth: 5

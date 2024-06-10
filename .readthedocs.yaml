@@ -25,6 +25,8 @@ sphinx:
 
 formats:
 - pdf
+-jpeg
+-png
 
 
 python:
