@@ -61,14 +61,14 @@ Operating System
 * **Linux** 
 ~~~~~~~~~~~~
 
-Here_ , you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here`_ , you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
-Other informative pages can be found here_ and here_.
+Other informative pages can be found `here`_ and `here <marq_>`_.
 
 .. _here: https://ryanstutorials.net/linuxtutorial/
-.. _here: https://www.marquette.edu/high-performance-computing/linux-intro.php
+.. _marq: https://www.marquette.edu/high-performance-computing/linux-intro.php
 
 * **Mac**
 ~~~~~~~~~~
@@ -80,10 +80,10 @@ Click `here`_ for terminal basics.
 * **Windows - MUST use Ubuntu**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click here_ for the Ubuntu download page, or download in the Microsoft store.
+Click `here`_ for the Ubuntu download page, or download in the Microsoft store.
 .. _here: https://ubuntu.com/desktop/wsl 
 
-Here_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 .. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
 Installation
@@ -98,7 +98,8 @@ Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 
 In the command line, type: 
 
-.. codeblock:: [bash]
+::
+
 git clone https://github.com/raw-lab/MetaCerberus.git 
 cd MetaCerberus
 bash install_metacerberus.sh
@@ -116,25 +117,28 @@ Option 1) Mamba
 .. note::
    Make sure to install Mamba in your base Conda environment unless you have OSX with ARM architecture (M1/M2 Macs). Follow the OSX-ARM instructions below if you have a Mac with ARM architecture.
 
-* Mamba install from bioconda with all dependencies:
+Mamba install from bioconda with all dependencies:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Linux/OSX-64**
 
 1. Install Mamba using Conda
 
 In command line, type:
-.. codeblock::[bash]
+
+:: [bash]
 conda install mamba
 
 2. Install MetaCerberus with Mamba
 
 In command line, type:
-.. codeblock::[bash]
+::
+
 mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
 conda activate metacerberus
 metacerberus.py --setup
 
-__OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
+OSX-ARM (M1/M2) [if using a Mac with ARM architecture]__
  
 1. Set up Conda environment
 
@@ -150,7 +154,7 @@ In command line, type:
 In command line, type:
 ::
 
-``conda install -y -c conda-forge mamba python=3.10 "pydantic<2"``
+conda install -y -c conda-forge mamba python=3.10 "pydantic<2"
 
 3. Install MetaCerberus with Mamba
 
@@ -158,7 +162,7 @@ In command line, type:
 ::
 
   mamba install -y -c bioconda -c conda-forge metacerberus
-  metacerberus.py --setup``
+  metacerberus.py --setup
 
 
 .. note:: 
@@ -169,7 +173,8 @@ Option 2) Anaconda - Linux/OSX-64 Only
 - Anaconda install from bioconda with all dependencies:
 
 In command line, type:
-::[bash]
+
+::
 
 conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
 conda activate metacerberus
