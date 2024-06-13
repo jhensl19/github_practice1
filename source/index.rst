@@ -183,7 +183,7 @@ conda activate metacerberus
 metacerberus.py --setup
 
 Overview 
-------------------
+=============
 
 image: MetaCerberus Workflow
    :height: 600px
@@ -191,7 +191,7 @@ image: MetaCerberus Workflow
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/workflow.jpg
 
 General Info
-~~~~~~~~~~~~~~~
+---------------
 
 * MetaCerberus has **three** basic modes: 
     1. Quality Control (QC) for raw reads
@@ -213,7 +213,7 @@ General Info
 - FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10<sup>-9</sup> ).
 
 Input File Formats
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 - From any NextGen sequencing technology (from Illumina, PacBio, Oxford Nanopore)
 - Type 1 raw reads (.fastq format)
@@ -221,23 +221,143 @@ Input File Formats
 - Type 3 protein fasta (.faa format), assembled contigs which genes are converted to amino acid sequence
 
 Output Files
-~~~~~~~~~~~~~~~
+----------------
 
 - If an output directory is given, that folder will be created where all files are stored.
 - If no output directory is specified, the 'results_metacerberus' subfolder will be created **in the current directory.**
 - Gage/Pathview R analysis provided as separate scripts within R.  
 
 Visualization of Outputs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 - We use Plotly to visualize the data
 - Once the program is finished running, the html reports with the visuals will be saved to the _last_ step of the pipeline.
 - The HTML files require plotly.js to be present. One has been provided in the package and is saved to the report folder.
 
+Annotation
+===========
+
+image: MetaCerberus Rules
+   :height: 600px
+   :width: 600px
+   :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Rules.jpg
+   
+- ***Rule 1*** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
+- ***Rule 2*** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
+- ***Rule 3*** is to ensure overlapping dual domains are not missed. This is the dual independent overlapping domain module for convergent binary domain pORFs. If two domains within a pORF are overlapping <10 amino acids (e.g, COG1 and COG4) then both domains are counted and reported due to the dual domain issue within a single pORF. If a function hits multiple pathways within an accession, both are counted, in pathway roll-up, as many proteins function in multiple pathways.
+- ***Rule 4*** is the equal match counter to avoid missing high quality matches within the same protein. This is an independent accession module for a single pORF: if both hits within the same database have equal values for both e-value and bit score but are different accessions from the same database (e.g., KO1 and KO3) then both are reported.
+- ***Rule 5*** is the ‘winner take all’ match rule for providing the best match. It is computed as the winner takes all module for overlapping pORFs: if two HMM hits are overlapping (>10 amino acids) from the same database the lowest resulting e-value and highest bit score wins.
+- ***Rule 6*** is to avoid partial or fractional hits being counted. This ensures that only whole discrete integer counting (e.g., 0, 1, 2 to n) are computed and that partial or fractional counting is excluded. 
+
+Quick Start Examples
+========================
+
+Genome examples
+----------------
+
+&bull; All databases
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
+
+&bull; Only KEGG/FOAM all
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+
+&bull; Only KEGG/FOAM prokaryotic centric
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
+&bull; Only KEGG/FOAM eukaryotic centric
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+::
 
+   conda activate metacerberus
+   metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
+
+&bull; Only Viral/Phage databases
+::
+
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
+
+>[!Tip] 
+> You can pick any single database you want for your analysis including KOFam_all, COG, VOG, PHROG, CAZy or specific KO databases for eukaryotes and prokaryotes (KOFam_eukaryote or KOFam_prokaryote).
+
+### &bull; Custom HMM
+```bash
+conda activate metacerberus
+metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
+```
+  
+## Illumina data
+
+### &bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
+```
+
+### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
+```
+
+## Nanopore data
+
+### &bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
+```
+
+### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
+```
+
+## PacBio data
+
+### &bull; Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
+```
+
+### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+
+```bash
+conda activate metacerberus
+metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
+```
+
+## SUPER (both methods)
+
+```bash
+conda activate metacerberus
+metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
+```
+
+> [!Important] 
+> Fraggenescan will work for prokaryotes and viruses/bacteriophage but prodigal will not work well for eukaryotes.
 
 
 
