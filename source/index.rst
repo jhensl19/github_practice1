@@ -93,9 +93,10 @@ Installation
 Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 ---------------------------------------------------------------------------------
 .. important:: 
-   You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) for Conda download instructions.
+   You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click `here`_ for Conda download instructions.
    For each command given, enter the first line of the command, then press ENTER. Once the operation completes, the terminal prompt will reappear (blinking vertical line where you type). Proceed to the next line of the given command, press ENTER. Continue as such, line by line, until the entire given command has been entered.  
-:
+
+.. _here: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html 
 
 In the command line, type: 
 
@@ -185,8 +186,7 @@ In command line, type:
 Overview 
 =============
 
-image: MetaCerberus Workflow
-   :height: 600px
+image: MetaCerberus Workflow.jpg
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/workflow.jpg
 
@@ -202,15 +202,22 @@ General Info
     2. Assembled contigs, as MAGs, vMAGs, isolate genomes, or a collection of contigs
     3. Amino acid fasta (.faa), previously called pORFs
 - We offer customization, including running all databases together, individually or specifying select databases. For example, if a user wants to run prokaryotic or eukaryotic-specific KOfams, or an individual database alone such as dbCAN, both are easily customized within MetaCerberus.
-- In QC mode, raw reads are quality controlled with pre- and post-trim via [FastQC](https://github.com/s-andrews/FastQC). Raw reads are then trimmed via data type; if the data is Illumina or PacBio, [fastp](https://doi.org/10.1093/bioinformatics/bty560)  is called, otherwise it assumes the data is Oxford Nanopore then [PoreChop](https://github.com/rrwick/Porechop) is utilized.
+- In QC mode, raw reads are quality controlled with pre- and post-trim via `FastQC`_. Raw reads are then trimmed via data type; if the data is Illumina or PacBio, `fastp`_  is called, otherwise it assumes the data is Oxford Nanopore then `PoreChop`_ is utilized.
 - If Illumina reads are utilized, an optional bbmap step to remove the phiX174 genome is available or user provided contaminate genome. Phage phiX174 is a common contaminant within the Illumina platform as their library spike-in control. We highly recommend this removal if viral analysis is conducted, as it would provide false positives to ssDNA microviruses within a sample.
 - We include a ```--skip_decon``` option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.
 - In the formatting and gene prediction stage, contigs and genomes are checked for N repeats. These N repeats are removed by default.
-- We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module [Metaome Stats](https://github.com/raw-lab/metaome_stats).
-- Contigs can be converted to pORFs using [Prodigal](https://anaconda.org/bioconda/prodigal), [FragGeneScanRs](https://github.com/unipept/FragGeneScanRs/), and [Prodigal-gv](https://github.com/apcamargo/prodigal-gv)) as specified by user preference.
+- We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module `Metaome Stats`_().
+- Contigs can be converted to pORFs using `Prodigal`_, `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
 - Scaffold annotation is not recommended due to N's providing ambiguous annotation.
 - Both Prodigal and FragGeneScanRs can be used via our ```--super``` option, and we recommend using FragGeneScanRs for samples rich in eukaryotes.
 - FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10<sup>-9</sup> ).
+.. _fastp: https://doi.org/10.1093/bioinformatics/bty560
+.. _PoreChop: https://github.com/rrwick/Porechop
+.. _FastQC: https://github.com/s-andrews/FastQC
+.. _Metaome Stats: https://github.com/raw-lab/metaome_stats 
+.. _Prodigal: https://anaconda.org/bioconda/prodigal
+.. _FragGeneScanRs: https://github.com/unipept/FragGeneScanRs/
+.. _Prodigal-gv: https://github.com/apcamargo/prodigal-gv
 
 Input File Formats
 ----------------------
@@ -237,11 +244,11 @@ Visualization of Outputs
 Annotation
 ===========
 
-image: MetaCerberus Rules
+image: MetaCerberus-Rules.jpg
    :height: 600px
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Rules.jpg
-   
+
 - ***Rule 1*** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
 - ***Rule 2*** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
 - ***Rule 3*** is to ensure overlapping dual domains are not missed. This is the dual independent overlapping domain module for convergent binary domain pORFs. If two domains within a pORF are overlapping <10 amino acids (e.g, COG1 and COG4) then both domains are counted and reported due to the dual domain issue within a single pORF. If a function hits multiple pathways within an accession, both are counted, in pathway roll-up, as many proteins function in multiple pathways.
