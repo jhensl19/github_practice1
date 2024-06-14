@@ -249,12 +249,12 @@ image: MetaCerberus-Rules.jpg
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Rules.jpg
 
-- ***Rule 1*** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
-- ***Rule 2*** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
-- ***Rule 3*** is to ensure overlapping dual domains are not missed. This is the dual independent overlapping domain module for convergent binary domain pORFs. If two domains within a pORF are overlapping <10 amino acids (e.g, COG1 and COG4) then both domains are counted and reported due to the dual domain issue within a single pORF. If a function hits multiple pathways within an accession, both are counted, in pathway roll-up, as many proteins function in multiple pathways.
-- ***Rule 4*** is the equal match counter to avoid missing high quality matches within the same protein. This is an independent accession module for a single pORF: if both hits within the same database have equal values for both e-value and bit score but are different accessions from the same database (e.g., KO1 and KO3) then both are reported.
-- ***Rule 5*** is the ‘winner take all’ match rule for providing the best match. It is computed as the winner takes all module for overlapping pORFs: if two HMM hits are overlapping (>10 amino acids) from the same database the lowest resulting e-value and highest bit score wins.
-- ***Rule 6*** is to avoid partial or fractional hits being counted. This ensures that only whole discrete integer counting (e.g., 0, 1, 2 to n) are computed and that partial or fractional counting is excluded. 
+- **Rule 1** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
+- **Rule 2** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
+- **Rule 3** is to ensure overlapping dual domains are not missed. This is the dual independent overlapping domain module for convergent binary domain pORFs. If two domains within a pORF are overlapping <10 amino acids (e.g, COG1 and COG4) then both domains are counted and reported due to the dual domain issue within a single pORF. If a function hits multiple pathways within an accession, both are counted, in pathway roll-up, as many proteins function in multiple pathways.
+- **Rule 4** is the equal match counter to avoid missing high quality matches within the same protein. This is an independent accession module for a single pORF: if both hits within the same database have equal values for both e-value and bit score but are different accessions from the same database (e.g., KO1 and KO3) then both are reported.
+- **Rule 5** is the ‘winner take all’ match rule for providing the best match. It is computed as the winner takes all module for overlapping pORFs: if two HMM hits are overlapping (>10 amino acids) from the same database the lowest resulting e-value and highest bit score wins.
+- **Rule 6** is to avoid partial or fractional hits being counted. This ensures that only whole discrete integer counting (e.g., 0, 1, 2 to n) are computed and that partial or fractional counting is excluded. 
 
 Quick Start Examples
 ========================
@@ -262,7 +262,7 @@ Quick Start Examples
 Genome examples
 ----------------
 
-&bull; All databases
+- All databases
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -270,14 +270,14 @@ Genome examples
    conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
-&bull; Only KEGG/FOAM all
+- Only KEGG/FOAM all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
    conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
 
-&bull; Only KEGG/FOAM prokaryotic centric
+- Only KEGG/FOAM prokaryotic centric
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -285,7 +285,7 @@ Genome examples
    metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
-&bull; Only KEGG/FOAM eukaryotic centric
+- Only KEGG/FOAM eukaryotic centric
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
@@ -293,7 +293,7 @@ Genome examples
    conda activate metacerberus
    metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
-&bull; Only Viral/Phage databases
+- Only Viral/Phage databases
 ::
 
    conda activate metacerberus
@@ -303,7 +303,7 @@ Genome examples
 
    You can pick any single database you want for your analysis including KOFam_all, COG, VOG, PHROG, CAZy or specific KO databases for eukaryotes and prokaryotes (KOFam_eukaryote or KOFam_prokaryote).
 
-&bull; Custom HMM
+- Custom HMM
 ~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
@@ -311,13 +311,13 @@ Genome examples
 
 Illumina data
 ------------------
-&bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+- Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
    metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
-&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+- Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
@@ -325,14 +325,14 @@ Illumina data
 
 Nanopore data
 -----------------
-&bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+- Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
    metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
-&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+- Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
@@ -341,14 +341,14 @@ Nanopore data
 
 PacBio data
 -----------------------
-&bull; Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+- Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
    metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
-&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+- Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
    conda activate metacerberus
@@ -365,8 +365,42 @@ SUPER (both methods)
 .. :important: 
    Fraggenescan will work for prokaryotes and viruses/bacteriophage but prodigal will not work well for eukaryotes.
 
-
-
+Prerequisites and Dependencies
+================================
+- **python >= 3.8**
+Available from Bioconda - external tool list
+---------------------------------------------
+=========     ============   =============
+Tool          Version        Publication
+==========  ============   ==============
+`Fastqc`_       0.12.1      None 
+---------  ---------  -------------
+`Fastp`_   0.23.4      `Chen et al. 2018`_ 
+---------  -----------  -------------------
+`PoreChop`_  0.2.4        None
+-------------------------------------------
+`bbmap`_      39.06          None
+`Prodigal`_   2.6.3         `Hyatt et al. 2010`_  
+`FragGeneScanRs`_ v1.1.0     `Van der Jeugt et al. 2022`_
+`Prodigal-gv`_   2.2.1        `Camargo et al. 2023`_  
+`Phanotate`_     1.5.0         `McNair et al. 2019`_
+`HMMR`_          3.4            `Johnson et al. 2010`_
+============    ===========    ========================
+.. _Fastqc: https://github.com/s-andrews/FastQC
+.. _Fastp: https://github.com/OpenGene/fastp>
+.. _PoreChop: https://github.com/rrwick/Porechop
+.. _bbmap: https://github.com/BioInfoTools/BBMap
+.. _Prodigal: https://github.com/hyattpd/Prodigal
+.. _FragGeneScanRs: https://github.com/unipept/FragGeneScanRs/
+.. _Prodigal-gv: https://github.com/apcamargo/prodigal-gv
+.. _Phanotate: https://github.com/deprekate/PHANOTATE
+.. _HMMR: https://github.com/EddyRivasLab/hmmer
+.. _Chen et al. 2018: https://doi.org/10.1093/bioinformatics/bty560
+.. _Hyatt et al. 2010: https://doi.org/10.1186/1471-2105-11-119
+.. _Van der Jeugt et al. 2022: https://doi.org/10.1186/s12859-022-04736-5
+.. _Camargo et al. 2023: https://www.nature.com/articles/s41587-023-01953-y
+.. _McNair et al. 2019: https://doi.org/10.1093/bioinformatics/btz265
+.. _Johnson et al. 2010: https://doi.org/10.1186/1471-2105-11-431
 
 
 .. toctree::
