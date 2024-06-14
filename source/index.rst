@@ -369,20 +369,20 @@ Prerequisites and Dependencies
 - **python >= 3.8**
 Available from Bioconda - external tool list
 ---------------------------------------------
-=========        ============   =============
-Tool             Version        Publication
-==========       ============   ==============
-`Fastqc`_   |       0.12.1    |     None 
-------------+-----------------+------------------
-`Fastp`_    |       0.23.4    |   `Chen et al. 2018`_ 
-------------+-----------------+-------------------
-`PoreChop`_ |       0.2.4     |      None
-------------+-----------------+--------------
-`bbmap`_    |       39.06     |      None
-------------+-----------------+-------------------------
-`Prodigal`_ |       2.6.3     |   `Hyatt et al. 2010`_ 
-------------+-----------------+--------------------------------- 
-`FragGeneScanRs`_ | v1.1.0    |    `Van der Jeugt et al. 2022`_
++-------------+----------------+----------------------+
+| Tool        |     Version    |   Publication        |
++-------------+----------------+----------------------+
+| `Fastqc`_         |    0.12.1      |    None              |
++-------------------+----------------+----------------------+
+| `Fastp`_          |    0.23.4      | `Chen et al. 2018`_  | 
++-------------------+----------------+----------------------+
+| `PoreChop`_       |    0.2.4       |      None            |
++-------------------+----------------+----------------------+
+| `bbmap`_          |     39.06      |      None            |
++-------------------+----------------+----------------------+
+| `Prodigal`_       |     2.6.3      | `Hyatt et al. 2010`_ | 
++-------------------+----------------+----------------------+
+| `FragGeneScanRs`_ | v1.1.0    |    `Van der Jeugt et al. 2022`_
 ---------------+---------------+------------------------------------
 `Prodigal-gv`_ |   2.2.1      |   `Camargo et al. 2023`_  
 ---------------+---------------+-------------------------------
@@ -456,7 +456,6 @@ Database sources
 +-------------------+--------------+------------+-----------------------------------+-------------------------------+
 | `FESNov`_	        | 2024	        |    1	      |  `Rodríguez del Río et al. 2024`_ |  Coming soon                  |
 +-------------------+--------------+------------+-----------------------------------+-------------------------------+
-
 .. _KEGG/KOfams: https://www.genome.jp/ftp/db/kofam/
 .. _FOAM/KOfams: https://osf.io/3uz2j/
 .. _COG: https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/
@@ -504,33 +503,39 @@ To run a custom database, you need a HMM containing the protein family of intere
 
 Example Metadata sheet
 ~~~~~~~~~~~~~~~~~~~~~~~~
-====== ==========
-| ID    Function 
++------+----------+
+| ID   | Function |
++------+----------+ 
 | HMM1 | Sugarase |
--------+----------- 
++------+----------+ 
 | HMM2 | Coffease | 
-=======  ==========
++------+----------+
 
 MetaCerberus Options
 ======================
 .. important:: 
    If the MetaCerberus environment is not used, make sure the dependencies are in PATH or specified in the config file.
 
-- Run `metacerberus.py` with the options required for your project.
+- Run ``metacerberus.py`` with the options required for your project.
 
-Usage of ```metacerberus.py```: 
+Usage of ``metacerberus.py``: 
 .. Note::
    The following are different options/arguments to modify the execution of MetaCerberus.
 
 **Setup arguments:**
-----------------------
-|Argument/Option    | Function [Default]   | Usage Format    | Accepted format |            Example (Type as one line)                 |
-|:----------  | :--------------------- | :------------------ | :------------------------ | :----------------------------- |
-|  ```--setup``` |  Setup additional dependencies [False]  |  ```--setup``` |  N/A  | ```metacerberus.py --setup```  |  
-| ```--update``` | Update downloaded databases [False] | ```--update``` | N/A | ```metacerberus.py --update```|
-| ```--list-db``` | List available and downloaded databases [False] | ```--list-db``` | N/A | ```metacerberus.py --list-db```  | 
-| ```--download``` | Downloads selected HMMs. Use the option ```--list-db``` for a list of available databases, default is to download all available databases | ```--download [DOWNLOAD ...]``` | ```--download [.HMM FILE]``` | ```--download path/to/example/directory.hmm```  |
-| ```--uninstall``` | Remove downloaded databases and FragGeneScan+ [False] | ```--uninstall``` | N/A | ```metacerberus.py --uninstall``` |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+|Argument/Option  | Function [Default]                                                                                                                        | Usage Format                   | Accepted format            |            Example (Type as one line)         |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+| ``--setup``     |  Setup additional dependencies [False]                                                                                                    |  ``--setup``                   |  N/A                       | ``metacerberus.py --setup``                   |  
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+| ``--update``    | Update downloaded databases [False]                                                                                                       | ``--update``                   | N/A                        | ``metacerberus.py --update``                  |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+| ``--list-db``   | List available and downloaded databases [False]                                                                                           | ``--list-db``                  | N/A                        | ``metacerberus.py --list-db``                 | 
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+| ``--download``  | Downloads selected HMMs. Use the option ```--list-db``` for a list of available databases, default is to download all available databases | ``--download [DOWNLOAD ...]``` | ``--download [.HMM FILE]`` | ``--download path/to/example/directory.hmm``  |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
+| ``--uninstall`` | Remove downloaded databases and FragGeneScan+ [False]                                                                                     | ``--uninstall``                | N/A                        | ``metacerberus.py --uninstall``               |
++-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
 
 **Input File Arguments:**
 ----------------------------
@@ -539,37 +544,48 @@ Usage of ```metacerberus.py```:
 
   **Accepted formats**: [.fastq, .fq, .fasta, .fa, .fna, .ffn, .faa]
 
-   _Example:_
+   __Example:__
  
-   -```metacerberus.py --prodigal file1.fasta``` 
-   - ```metacerberus.py --config file.config```
+   - ``metacerberus.py --prodigal file1.fasta`` 
+   - ``metacerberus.py --config file.config``
 
-   If a sequence is given in [.fastq, .fq] format, one of `--nanopore`, `--illumina`, or `--pacbio` **is required.**:
+   If a sequence is given in [.fastq, .fq] format, one of ``--nanopore``, ``--illumina``, or ``--pacbio`` **is required.**:
 
    **Option format interpretation:**
    
-   - ```--setup``` = accepts no additional options
+   - ``--setup`` = accepts no additional options
 
-   - ```--download DOWNLOAD``` = accepts one option, (represented by capitalized command 'DOWNLOAD')
+   - ``--download DOWNLOAD`` = accepts one option, (represented by capitalized command 'DOWNLOAD')
 
-   - ```--fraggenescan FRAGGENESCAN [FRAGGENESCAN...]``` = accepts one or greater options (represented by capitalized commands)
+   - ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN...]`` = accepts one or greater options (represented by capitalized commands)
 
-==================  ============== ================= ================= ===================== =============================              
-|Argument/Option    | Function    | Usage Format    | Accepted format | # Options Accepted | Example (Type as one line)  |
-|:----------:  | :---------------------: | :------------------: | :------------------------: | :------- | :-----------------------------: |
-| ```-c``` or ```--config``` | Path to config file, command line takes priority | ```-c CONFIG``` or ```--config CONFIG``` | Path to config file | 1 | ```-c path/to/config/file``` |
-| ```--prodigal``` | Prokaryote nucleotide sequence (includes microbes, bacteriophage) | ```--prodigal PRODIGAL [PRODIGAL ...]``` | Sequence file | =>1 | ```--prodigal FILE1 FILE2...```|
-| ```--fraggenescan``` | Eukaryote nucleotide sequence (includes other viruses, works all around for everything) | ```--fraggenescan FRAGGENESCAN [FRAGGENESCAN ...]``` | Sequence file | =>1 | ```--fraggenescan FILE1 FILE2...```
-| ```--super``` | Run sequence in **both** `--prodigal` and `--fraggenescan` modes | `--super SUPER [SUPER ...]` | Sequence file | =>1 | ```--super FILE1 FILE2...``` |
-| `--prodigalgv` | Giant virus nucleotide sequence | `--prodigalgv PRODIGALGV [PRODIGALGV ...]` | Sequence file | =>1 | `--prodigalgv FILE1 FILE2...` |
-| `--phanotate` | Phage sequence | `--phanotate PHANOTATE [PHANOTATE ...]` | Sequence file | =>1 | `--phanotate  FILE1 FILE2...` | 
-| `--protein` or `--amino` | Protein Amino Acid sequence | `--protein PROTEIN [PROTEIN ...]` or `--amino PROTEIN [PROTEIN ...]` | Sequence file | =>1 | `--protein FILE1 FILE2...` or `--amino FILE1 FILE2...` | 
-| `--hmmer-tsv` | Annotations tsv file from HMMER (experimental) | `--hmmer-tsv HMMER_TSV [HMMER_TSV ...]` | Sequence file | =>1 | `--hmmer-tsv FILE1 FILE2...` |
-| `--class` | path to a tsv file which has class information for the samples. If this file is included, scripts will be included to run Pathview in R | `--class CLASS` | Path to TSV file | 1 | `--class TSV_FILE1 |
-| `--illumina` | Specifies that the given FASTQ files are from Illumina | `--illumina` | N/A | N/A | `metacerberus.py --illumina` |
-| `--nanopore` | Specifies that the given FASTQ files are from Nanopore | `--nanopore` | N/A | N/A | `metacerberus.py --nanopore` |  
-| `--pacbio` | Specifies that the given FASTQ files are from PacBio | `--pacbio` | N/A | N/A | `metacerberus.py --pacbio` | 
-
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+              
+|Argument/Option           | Function                                                                                                                                | Usage Format                                                         | Accepted format     | # Options Accepted | Example (Type as one line)                             |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| ``-c`` or ``--config``   | Path to config file, command line takes priority                                                                                        | ``-c CONFIG`` or ``--config CONFIG``                                 | Path to config file | 1                  | ``-c path/to/config/file``                             |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+ 
+| ``--prodigal``           | Prokaryote nucleotide sequence (includes microbes, bacteriophage)                                                                       | ``--prodigal PRODIGAL [PRODIGAL ...]``                               | Sequence file       | =>1                | ``--prodigal FILE1 FILE2...``                          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| ``--fraggenescan``       | Eukaryote nucleotide sequence (includes other viruses, works all around for everything)                                                 | ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN ...]``                   | Sequence file       | =>1                | ``--fraggenescan FILE1 FILE2...``                      |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| ``--super``              | Run sequence in **both** `--prodigal` and `--fraggenescan` modes                                                                        | `--super SUPER [SUPER ...]`                                          | Sequence file       | =>1                | ``--super FILE1 FILE2...``                             |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--prodigalgv`           | Giant virus nucleotide sequence                                                                                                         | `--prodigalgv PRODIGALGV [PRODIGALGV ...]`                           | Sequence file       | =>1                | `--prodigalgv FILE1 FILE2...`                          |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--phanotate`            | Phage sequence                                                                                                                          | `--phanotate PHANOTATE [PHANOTATE ...]`                              | Sequence file       | =>1                | `--phanotate  FILE1 FILE2...`                          | 
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--protein` or `--amino` | Protein Amino Acid sequence                                                                                                             | `--protein PROTEIN [PROTEIN ...]` or `--amino PROTEIN [PROTEIN ...]` | Sequence file       | =>1                | `--protein FILE1 FILE2...` or `--amino FILE1 FILE2...` | 
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--hmmer-tsv`            | Annotations tsv file from HMMER (experimental)                                                                                          | `--hmmer-tsv HMMER_TSV [HMMER_TSV ...]`                              | Sequence file       | =>1                | `--hmmer-tsv FILE1 FILE2...`                           |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--class`                | path to a tsv file which has class information for the samples. If this file is included, scripts will be included to run Pathview in R | `--class CLASS`                                                      | Path to TSV file    | 1                  | `--class TSV_FILE1                                     |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--illumina`             | Specifies that the given FASTQ files are from Illumina                                                                                  | `--illumina`                                                         | N/A                 | N/A                | `metacerberus.py --illumina`                           |
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--nanopore`             | Specifies that the given FASTQ files are from Nanopore                                                                                  | `--nanopore`                                                         | N/A                 | N/A                | `metacerberus.py --nanopore`                           |  
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
+| `--pacbio`               | Specifies that the given FASTQ files are from PacBio                                                                                    | `--pacbio`                                                           | N/A                 | N/A                | `metacerberus.py --pacbio`                             | 
++--------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+---------------------+--------------------+--------------------------------------------------------+
 **Output options:**
 ------------------------
 ===================  ====================    ================   ===============  ====================  ============================      
@@ -607,7 +623,7 @@ Usage of ```metacerberus.py```:
 | `--qc_seq` | FASTA File containing control sequences for decontamination | `--qc_seq QC_SEQ` | FASTA file | 1 | `metacerberus.py --qc_seq /path/to/FASTA/file` |
 
 .. note::
-   Arguments/options that start with `--` can also be set in a config file (specified via `-c`). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_(https://goo.gl/R74nmi). In general, **command-line values override config file values which override defaults.**
+   Arguments/options that start with ```--``` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
 .. _syntax: https://goo.gl/R74nmi
 
 
