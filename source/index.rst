@@ -185,7 +185,7 @@ In command line, type:
 Overview 
 =============
 
-.. image: MetaCerberus Workflow.jpg
+.. image:: MetaCerberus Workflow.jpg
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/workflow.jpg
 
@@ -206,7 +206,7 @@ General Info
 - We include a ```--skip_decon``` option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.
 - In the formatting and gene prediction stage, contigs and genomes are checked for N repeats. These N repeats are removed by default.
 - We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module `Metaome Stats`_.
-- Contigs can be converted to pORFs using `Prodigal`_, `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
+- Contigs can be converted to pORFs using `Prodigal`_ , `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
 - Scaffold annotation is not recommended due to N's providing ambiguous annotation.
 - Both Prodigal and FragGeneScanRs can be used via our ```--super``` option, and we recommend using FragGeneScanRs for samples rich in eukaryotes.
 - FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10<sup>-9</sup> ).
@@ -243,7 +243,7 @@ Visualization of Outputs
 Annotation
 ===========
 
-.. image: MetaCerberus-Rules.jpg
+.. image:: MetaCerberus-Rules.jpg
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Rules.jpg
 
 - **Rule 1** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
@@ -263,24 +263,24 @@ Genome examples
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
 
 - Only KEGG/FOAM all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
 
 
 - Only KEGG/FOAM prokaryotic centric
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
+   conda activate metacerberus
+   metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
 
@@ -289,14 +289,14 @@ Genome examples
 
 ::
 
-  conda activate metacerberus
-  metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
+   conda activate metacerberus
+   metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
 - Only Viral/Phage databases
 ::
 
-  conda activate metacerberus
-  metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
 .. tip::
 
@@ -305,37 +305,37 @@ Genome examples
 - Custom HMM
 ~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
 Illumina data
 ------------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
 Nanopore data
 -----------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
 
 PacBio data
@@ -343,8 +343,8 @@ PacBio data
 - Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
