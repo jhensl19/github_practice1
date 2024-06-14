@@ -352,15 +352,15 @@ PacBio data
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-  conda activate metacerberus
-  metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 SUPER (both methods)
 ----------------------
 ::
-  conda activate metacerberus
-  metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
+   conda activate metacerberus
+   metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
 
 .. :important: 
@@ -374,24 +374,24 @@ Available from Bioconda - external tool list
 =========        ============   =============
 Tool             Version        Publication
 ==========       ============   ==============
-`Fastqc`_          0.12.1         None 
-------------------------------------------------
-`Fastp`_           0.23.4      `Chen et al. 2018`_ 
-------------------------------------------------
-`PoreChop`_        0.2.4           None
--------------------------------------------
-`bbmap`_           39.06           None
-------------------------------------------------------
-`Prodigal`_        2.6.3         `Hyatt et al. 2010`_ 
--------------------------------------------------------------- 
-`FragGeneScanRs`_  v1.1.0        `Van der Jeugt et al. 2022`_
-------------------------------------------------------------------
-`Prodigal-gv`_     2.2.1         `Camargo et al. 2023`_  
--------------------------------------------------------------
-`Phanotate`_       1.5.0         `McNair et al. 2019`_
-------------------------------------------------------------
-`HMMR`_             3.4           `Johnson et al. 2010`_
-============    ===========    ========================
+`Fastqc`_   |       0.12.1    |     None 
+------------+-----------------+------------------
+`Fastp`_    |       0.23.4    |   `Chen et al. 2018`_ 
+------------+-----------------+-------------------
+`PoreChop`_ |       0.2.4     |      None
+------------+-----------------+--------------
+`bbmap`_    |       39.06     |      None
+------------+-----------------+-------------------------
+`Prodigal`_ |       2.6.3     |   `Hyatt et al. 2010`_ 
+------------+-----------------+--------------------------------- 
+`FragGeneScanRs`_ | v1.1.0    |    `Van der Jeugt et al. 2022`_
+---------------+---------------+------------------------------------
+`Prodigal-gv`_ |   2.2.1      |   `Camargo et al. 2023`_  
+---------------+---------------+-------------------------------
+`Phanotate`_   |    1.5.0      |   `McNair et al. 2019`_
+---------------+---------------+------------------------------
+`HMMR`_        |     3.4       |    `Johnson et al. 2010`_
+============    ==============    ========================
 
 .. _Fastqc: https://github.com/s-andrews/FastQC
 .. _Fastp: https://github.com/OpenGene/fastp>
@@ -411,7 +411,9 @@ Tool             Version        Publication
 
 MetaCerberus Databases
 ==========================
+
 All pre-formatted databases are present at `OSF`_. 
+
 .. _OSF: https://osf.io/3uz2j
 
 Database sources
