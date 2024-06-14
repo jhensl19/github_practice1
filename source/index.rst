@@ -46,8 +46,7 @@ About
 MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). MetaCerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. image:: image.jpeg
-   :height: 600px
+.. image:: image.jpg
    :width: 600px
    :target: https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
 
@@ -186,7 +185,7 @@ In command line, type:
 Overview 
 =============
 
-image: MetaCerberus Workflow.jpg
+.. image: MetaCerberus Workflow.jpg
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/workflow.jpg
 
@@ -206,7 +205,7 @@ General Info
 - If Illumina reads are utilized, an optional bbmap step to remove the phiX174 genome is available or user provided contaminate genome. Phage phiX174 is a common contaminant within the Illumina platform as their library spike-in control. We highly recommend this removal if viral analysis is conducted, as it would provide false positives to ssDNA microviruses within a sample.
 - We include a ```--skip_decon``` option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.
 - In the formatting and gene prediction stage, contigs and genomes are checked for N repeats. These N repeats are removed by default.
-- We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module `Metaome Stats`_().
+- We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module `Metaome Stats`_.
 - Contigs can be converted to pORFs using `Prodigal`_, `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
 - Scaffold annotation is not recommended due to N's providing ambiguous annotation.
 - Both Prodigal and FragGeneScanRs can be used via our ```--super``` option, and we recommend using FragGeneScanRs for samples rich in eukaryotes.
@@ -266,23 +265,25 @@ Genome examples
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
+  conda activate metacerberus
+  metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
 - Only KEGG/FOAM all
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+  conda activate metacerberus
+  metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+
 
 - Only KEGG/FOAM prokaryotic centric
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
+  conda activate metacerberus
+  metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
+
 
 
 - Only KEGG/FOAM eukaryotic centric
@@ -290,14 +291,14 @@ Genome examples
 
 ::
 
-   conda activate metacerberus
-   metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
+  conda activate metacerberus
+  metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
 - Only Viral/Phage databases
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
+  conda activate metacerberus
+  metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
 .. :tip:
 
@@ -306,37 +307,37 @@ Genome examples
 - Custom HMM
 ~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
+  conda activate metacerberus
+  metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
 Illumina data
 ------------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
+  conda activate metacerberus
+  metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
+  conda activate metacerberus
+  metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
 Nanopore data
 -----------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
+  conda activate metacerberus
+  metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
+  conda activate metacerberus
+  metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
 
 PacBio data
@@ -344,22 +345,22 @@ PacBio data
 - Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
+  conda activate metacerberus
+  metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
+  conda activate metacerberus
+  metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 SUPER (both methods)
 ----------------------
 ::
-   conda activate metacerberus
-   metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
+  conda activate metacerberus
+  metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
 
 .. :important: 
@@ -370,22 +371,28 @@ Prerequisites and Dependencies
 - **python >= 3.8**
 Available from Bioconda - external tool list
 ---------------------------------------------
-=========     ============   =============
-Tool          Version        Publication
-==========  ============   ==============
-`Fastqc`_       0.12.1      None 
----------  ---------  -------------
-`Fastp`_   0.23.4      `Chen et al. 2018`_ 
----------  -----------  -------------------
-`PoreChop`_  0.2.4        None
+=========        ============   =============
+Tool             Version        Publication
+==========       ============   ==============
+`Fastqc`_          0.12.1         None 
+------------------------------------------------
+`Fastp`_           0.23.4      `Chen et al. 2018`_ 
+------------------------------------------------
+`PoreChop`_        0.2.4           None
 -------------------------------------------
-`bbmap`_      39.06          None
-`Prodigal`_   2.6.3         `Hyatt et al. 2010`_  
-`FragGeneScanRs`_ v1.1.0     `Van der Jeugt et al. 2022`_
-`Prodigal-gv`_   2.2.1        `Camargo et al. 2023`_  
-`Phanotate`_     1.5.0         `McNair et al. 2019`_
-`HMMR`_          3.4            `Johnson et al. 2010`_
+`bbmap`_           39.06           None
+------------------------------------------------------
+`Prodigal`_        2.6.3         `Hyatt et al. 2010`_ 
+-------------------------------------------------------------- 
+`FragGeneScanRs`_  v1.1.0        `Van der Jeugt et al. 2022`_
+------------------------------------------------------------------
+`Prodigal-gv`_     2.2.1         `Camargo et al. 2023`_  
+-------------------------------------------------------------
+`Phanotate`_       1.5.0         `McNair et al. 2019`_
+------------------------------------------------------------
+`HMMR`_             3.4           `Johnson et al. 2010`_
 ============    ===========    ========================
+
 .. _Fastqc: https://github.com/s-andrews/FastQC
 .. _Fastp: https://github.com/OpenGene/fastp>
 .. _PoreChop: https://github.com/rrwick/Porechop
