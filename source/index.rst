@@ -178,9 +178,9 @@ In command line, type:
 
 ::
 
-conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
-conda activate metacerberus
-metacerberus.py --setup
+   conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
+   conda activate metacerberus
+   metacerberus.py --setup
 
 Overview 
 =============
@@ -292,72 +292,71 @@ Genome examples
    conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
->[!Tip] 
-> You can pick any single database you want for your analysis including KOFam_all, COG, VOG, PHROG, CAZy or specific KO databases for eukaryotes and prokaryotes (KOFam_eukaryote or KOFam_prokaryote).
+.. :tip:
 
-### &bull; Custom HMM
-```bash
-conda activate metacerberus
-metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
-```
-  
-## Illumina data
+   You can pick any single database you want for your analysis including KOFam_all, COG, VOG, PHROG, CAZy or specific KO databases for eukaryotes and prokaryotes (KOFam_eukaryote or KOFam_prokaryote).
 
-### &bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+&bull; Custom HMM
+~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
-```bash
-conda activate metacerberus
-metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
-```
+Illumina data
+------------------
+&bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
-### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
-```bash
-conda activate metacerberus
-metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
-```
+Nanopore data
+-----------------
+&bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
-## Nanopore data
 
-### &bull; Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
-```bash
-conda activate metacerberus
-metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
-```
 
-### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+PacBio data
+-----------------------
+&bull; Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
-```bash
-conda activate metacerberus
-metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
-```
 
-## PacBio data
+&bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+::
+   conda activate metacerberus
+   metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
-### &bull; Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 
-```bash
-conda activate metacerberus
-metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
-```
+SUPER (both methods)
+----------------------
+::
+   conda activate metacerberus
+   metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
-### &bull; Eukaryotes and Viruses metagenomes/metatranscriptomes
 
-```bash
-conda activate metacerberus
-metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
-```
-
-## SUPER (both methods)
-
-```bash
-conda activate metacerberus
-metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
-```
-
-> [!Important] 
-> Fraggenescan will work for prokaryotes and viruses/bacteriophage but prodigal will not work well for eukaryotes.
+.. :important: 
+   Fraggenescan will work for prokaryotes and viruses/bacteriophage but prodigal will not work well for eukaryotes.
 
 
 
