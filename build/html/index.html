@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MetaCerberus &mdash; ReadTheDocs_Tutorial  documentation</title>
+  <title>Metacerberus &mdash; ReadTheDocs_Tutorial  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
 
@@ -44,12 +44,55 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">MetaCerberus</a><ul>
+<li><a class="reference internal" href="#">Metacerberus</a></li>
 <li><a class="reference internal" href="#about">About</a></li>
 <li><a class="reference internal" href="#general-terminal-command-line-links-and-info-for-novices">General Terminal Command Line Links and Info for Novices</a><ul>
 <li><a class="reference internal" href="#operating-system">Operating System</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#installing-metacerberus-1-3-manually-due-to-mamba-conda-issue-newest-version">Installing Metacerberus 1.3 manually due to Mamba/Conda issue (Newest Version)</a></li>
+<li><a class="reference internal" href="#installing-metacerberus-1-2-1-and-below-due-to-current-mamba-and-conda-errors">Installing Metacerberus 1.2.1 and below (due to current Mamba and Conda errors)</a><ul>
+<li><a class="reference internal" href="#option-1-mamba">Option 1) Mamba</a></li>
+<li><a class="reference internal" href="#mamba-install-from-bioconda-with-all-dependencies">Mamba install from bioconda with all dependencies:</a></li>
+<li><a class="reference internal" href="#option-2-anaconda-linux-osx-64-only">Option 2) Anaconda - Linux/OSX-64 Only</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#general-info">General Info</a></li>
+<li><a class="reference internal" href="#input-file-formats">Input File Formats</a></li>
+<li><a class="reference internal" href="#output-files">Output Files</a></li>
+<li><a class="reference internal" href="#visualization-of-outputs">Visualization of Outputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#annotation">Annotation</a></li>
+<li><a class="reference internal" href="#quick-start-examples">Quick Start Examples</a><ul>
+<li><a class="reference internal" href="#genome-examples">Genome examples</a></li>
+<li><a class="reference internal" href="#illumina-data">Illumina data</a></li>
+<li><a class="reference internal" href="#nanopore-data">Nanopore data</a></li>
+<li><a class="reference internal" href="#pacbio-data">PacBio data</a></li>
+<li><a class="reference internal" href="#super-both-methods">SUPER (both methods)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#prerequisites-and-dependencies">Prerequisites and Dependencies</a><ul>
+<li><a class="reference internal" href="#available-from-bioconda-external-tool-list">Available from Bioconda - external tool list</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metacerberus-databases">Metacerberus Databases</a><ul>
+<li><a class="reference internal" href="#database-sources">Database sources</a></li>
+<li><a class="reference internal" href="#custom-database">Custom Database</a><ul>
+<li><a class="reference internal" href="#example-metadata-sheet">Example Metadata sheet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metacerberus-options">Metacerberus Options</a><ul>
+<li><a class="reference internal" href="#input-file-arguments"><strong>Input File Arguments:</strong></a></li>
+<li><a class="reference internal" href="#output-options"><strong>Output options:</strong></a></li>
+<li><a class="reference internal" href="#database-options"><strong>Database options:</strong></a></li>
+<li><a class="reference internal" href="#optional-arguments"><strong>Optional Arguments:</strong></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -69,7 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">MetaCerberus</li>
+      <li class="breadcrumb-item active">Metacerberus</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -80,39 +123,792 @@
            <div itemprop="articleBody">
              
   <section id="metacerberus">
-<h1>MetaCerberus<a class="headerlink" href="#metacerberus" title="Permalink to this heading"></a></h1>
-<p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btae119"><img alt="Paper" src="https://img.shields.io/badge/paper-Bioinformatics-teal.svg?style=flat-square&amp;maxAge=3600" /></a> <a class="reference external" href="https://doi.org/10.1101/2023.08.10.552700"><img alt="Pre-print" src="https://img.shields.io/badge/preprint-BioRxiv-red.svg?style=flat-square&amp;maxAge=3600" /></a> <a class="reference external" href="https://pepy.tech/project/MetaCerberus"><img alt="Downloads PePY overall" src="https://static.pepy.tech/badge/MetaCerberus" /></a> <a class="reference external" href="https://pepy.tech/project/MetaCerberus"><img alt="Downloads PePY monthly" src="https://static.pepy.tech/badge/MetaCerberus/month" /></a> <a class="reference external" href="https://pepy.tech/project/MetaCerberus"><img alt="Downloads PePy weekly" src="https://static.pepy.tech/badge/MetaCerberus/week" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="BioConda Install Downloads" src="https://anaconda.org/bioconda/metacerberus/badges/downloads.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="Version" src="https://anaconda.org/bioconda/metacerberus/badges/version.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="Anaconda-Server Latest Release date" src="https://anaconda.org/bioconda/metacerberus/badges/latest_release_date.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="Anaconda-Server Relative Release date" src="https://anaconda.org/bioconda/metacerberus/badges/latest_release_relative_date.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="Anaconda-Server Platforms" src="https://anaconda.org/bioconda/metacerberus/badges/platforms.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/metacerberus"><img alt="Anaconda-Server License" src="https://anaconda.org/bioconda/metacerberus/badges/license.svg" /></a></p>
+<h1>Metacerberus<a class="headerlink" href="#metacerberus" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btae119"><img alt="Paper" src="https://img.shields.io/badge/paper-Bioinformatics-teal.svg?style=flat-square&amp;maxAge=3600" /></a> <a class="reference external" href="https://doi.org/10.1101/2023.08.10.552700"><img alt="Pre-print" src="https://img.shields.io/badge/preprint-BioRxiv-red.svg?style=flat-square&amp;maxAge=3600" /></a> <a class="reference external" href="https://pepy.tech/project/metacerberus"><img alt="Downloads PePY overall" src="https://static.pepy.tech/badge/metacerberus" /></a> <a class="reference external" href="https://pepy.tech/project/metacerberus"><img alt="Downloads PePY monthly" src="https://static.pepy.tech/badge/metacerberus/month" /></a> <a class="reference external" href="https://pepy.tech/project/metacerberus"><img alt="Downloads PePy weekly" src="https://static.pepy.tech/badge/metacerberus/week" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="BioConda Install Downloads" src="https://anaconda.org/bioconda/`/badges/downloads.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="Version" src="https://anaconda.org/bioconda/`/badges/version.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="Anaconda-Server Latest Release date" src="https://anaconda.org/bioconda/`/badges/latest_release_date.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="Anaconda-Server Relative Release date" src="https://anaconda.org/bioconda/`/badges/latest_release_relative_date.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="Anaconda-Server Platforms" src="https://anaconda.org/bioconda/`/badges/platforms.svg" /></a> <a class="reference external" href="https://anaconda.org/bioconda/`"><img alt="Anaconda-Server License" src="https://anaconda.org/bioconda/`/badges/license.svg" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.</p>
+<p>Metacerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.</p>
 </div>
+</section>
 <section id="about">
-<h2>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h2>
-<p>MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). MetaCerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.</p>
-<a class="reference external image-reference" href="(https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356)"><img alt="image.png" class="align-center" src="image.png" style="width: 100px; height: 100px;" /></a>
+<h1>About<a class="headerlink" href="#about" title="Permalink to this heading"></a></h1>
+<p>Metacerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). Metacerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.</p>
+<dl class="simple">
+<dt>. image:: image.jpg</dt><dd><dl class="field-list simple">
+<dt class="field-odd">width<span class="colon">:</span></dt>
+<dd class="field-odd"><p>600px</p>
+</dd>
+<dt class="field-even">target<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://github.com/raw-lab/metacerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356">https://github.com/raw-lab/metacerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356</a></p>
+</dd>
+</dl>
+</dd>
+</dl>
 </section>
 <section id="general-terminal-command-line-links-and-info-for-novices">
-<h2>General Terminal Command Line Links and Info for Novices<a class="headerlink" href="#general-terminal-command-line-links-and-info-for-novices" title="Permalink to this heading"></a></h2>
+<h1>General Terminal Command Line Links and Info for Novices<a class="headerlink" href="#general-terminal-command-line-links-and-info-for-novices" title="Permalink to this heading"></a></h1>
 <p>The following are links to helpful webpages based on your operating system. These contain basic starter info for those who have no previous experience with terminals or commands.</p>
 <section id="operating-system">
-<h3>Operating System<a class="headerlink" href="#operating-system" title="Permalink to this heading"></a></h3>
+<h2>Operating System<a class="headerlink" href="#operating-system" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Linux</strong></p></li>
 </ul>
-<p><cite>Here &lt;https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_&gt;</cite>, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.</p>
-<p>Other informative pages can be found <cite>here &lt;https://ryanstutorials.net/linuxtutorial/_&gt;</cite> and <cite>here &lt;https://www.marquette.edu/high-performance-computing/linux-intro.php_&gt;</cite>.</p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">Here</a> , you can find a tutorial covering the basics of the Linux command line, using Ubuntu.</p>
+<p>Other informative pages can be found <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">here</a> and <a class="reference external" href="https://www.marquette.edu/high-performance-computing/linux-intro.php">here</a>.</p>
 <ul class="simple">
 <li><p><strong>Mac</strong></p></li>
 </ul>
-<p>Click <cite>here &lt;https://support.apple.com/guide/terminal/welcome/mac_&gt;</cite> for terminal basics.</p>
+<hr class="docutils" />
+<p>Click <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">here</a> for terminal basics.</p>
 <ul class="simple">
-<li><p>Windows - MUST use Ubuntu</p></li>
+<li><p><strong>Windows - MUST use Ubuntu</strong></p></li>
 </ul>
-<p>Click <cite>here &lt;https://ubuntu.com/desktop/wsl_&gt;</cite> for the Ubuntu download page, or download in the Microsoft store.</p>
-<p><cite>Here &lt;https://ubuntu.com/tutorials/command-line-for-beginners#1-overview_&gt;</cite>, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.</p>
-<div class="toctree-wrapper compound">
+<hr class="docutils" />
+<p>Click <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">here</a> for the Ubuntu download page, or download in the Microsoft store.</p>
+<p><a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">Here</a>, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.</p>
+</section>
+</section>
+<section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<section id="installing-metacerberus-1-3-manually-due-to-mamba-conda-issue-newest-version">
+<h2>Installing Metacerberus 1.3 manually due to Mamba/Conda issue (Newest Version)<a class="headerlink" href="#installing-metacerberus-1-3-manually-due-to-mamba-conda-issue-newest-version" title="Permalink to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You still need to have Mamba and Conda installed. Just can’t use Mamba/Conda directly for the new version, currently. Click <a class="reference external" href="https://ryanstutorials.net/linuxtutorial/">here</a> for Conda download instructions.
+For each command given, enter the first line of the command, then press ENTER. Once the operation completes, the terminal prompt will reappear (blinking vertical line where you type). Proceed to the next line of the given command, press ENTER. Continue as such, line by line, until the entire given command has been entered.</p>
+</div>
+<p>In the command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">raw</span><span class="o">-</span><span class="n">lab</span><span class="o">/</span><span class="n">metacerberus</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">metacerberus</span>
+<span class="n">bash</span> <span class="n">install_metacerberus</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">metacerberus</span><span class="o">-</span><span class="mf">1.3.0</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">download</span>
+</pre></div>
 </div>
 </section>
+<section id="installing-metacerberus-1-2-1-and-below-due-to-current-mamba-and-conda-errors">
+<h2>Installing Metacerberus 1.2.1 and below (due to current Mamba and Conda errors)<a class="headerlink" href="#installing-metacerberus-1-2-1-and-below-due-to-current-mamba-and-conda-errors" title="Permalink to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will update this as soon as Mamba/Conda corrects this error.</p>
+</div>
+<section id="option-1-mamba">
+<h3>Option 1) Mamba<a class="headerlink" href="#option-1-mamba" title="Permalink to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure to install Mamba in your base Conda environment unless you have OSX with ARM architecture (M1/M2 Macs). Follow the OSX-ARM instructions below if you have a Mac with ARM architecture.</p>
+</div>
+</section>
+<section id="mamba-install-from-bioconda-with-all-dependencies">
+<h3>Mamba install from bioconda with all dependencies:<a class="headerlink" href="#mamba-install-from-bioconda-with-all-dependencies" title="Permalink to this heading"></a></h3>
+<p><strong>Linux/OSX-64</strong></p>
+<ol class="arabic simple">
+<li><p>Install Mamba using Conda</p></li>
+</ol>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">mamba</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install Metacerberus with Mamba</p></li>
+</ol>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span>  <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">setup</span>
+</pre></div>
+</div>
+<p>OSX-ARM (M1/M2) [if using a Mac with ARM architecture]</p>
+<ol class="arabic simple">
+<li><p>Set up Conda environment</p></li>
+</ol>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">n</span>
+<span class="n">conda</span> <span class="n">activate</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">env</span> <span class="o">--</span><span class="nb">set</span> <span class="n">subdir</span> <span class="n">osx</span><span class="o">-</span><span class="mi">64</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install Mamba, Python, and Pydantic inside the environment</p></li>
+</ol>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">mamba</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.10</span> <span class="s2">&quot;pydantic&lt;2&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install Metacerberus with Mamba</p></li>
+</ol>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mamba install -y -c bioconda -c conda-forge `
+metacerberus.py --setup
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mamba is the fastest installer. Anaconda or miniconda can be slow. Also, install Mamba from Conda, NOT from pip. The Mamba from pip doesn’t work for install.</p>
+</div>
+</section>
+<section id="option-2-anaconda-linux-osx-64-only">
+<h3>Option 2) Anaconda - Linux/OSX-64 Only<a class="headerlink" href="#option-2-anaconda-linux-osx-64-only" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Anaconda install from bioconda with all dependencies:</p></li>
+</ul>
+<p>In command line, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span>  <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span>  <span class="o">-</span><span class="n">y</span>
+<span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">setup</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt>. image:: metacerberus Workflow.jpg</dt><dd><dl class="field-list simple">
+<dt class="field-odd">width<span class="colon">:</span></dt>
+<dd class="field-odd"><p>600px</p>
+</dd>
+<dt class="field-even">target<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg">https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg</a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<section id="general-info">
+<h2>General Info<a class="headerlink" href="#general-info" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Metacerberus has <strong>three</strong> basic modes:</dt><dd><ol class="arabic simple">
+<li><p>Quality Control (QC) for raw reads</p></li>
+<li><p>Formatting/gene prediction</p></li>
+<li><p>Annotation</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Metacerberus can use <strong>three</strong> different input files:</dt><dd><ol class="arabic simple">
+<li><p>Raw read data from any sequencing platform (Illumina, PacBio, or Oxford Nanopore)</p></li>
+<li><p>Assembled contigs, as MAGs, vMAGs, isolate genomes, or a collection of contigs</p></li>
+<li><p>Amino acid fasta (.faa), previously called pORFs</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>We offer customization, including running all databases together, individually or specifying select databases. For example, if a user wants to run prokaryotic or eukaryotic-specific KOfams, or an individual database alone such as dbCAN, both are easily customized within Metacerberus.</p></li>
+<li><p>In QC mode, raw reads are quality controlled with pre- and post-trim via <a class="reference external" href="https://github.com/s-andrews/FastQC">FastQC</a>. Raw reads are then trimmed via data type; if the data is Illumina or PacBio, <a href="#id12"><span class="problematic" id="id13">`fastp`_</span></a>  is called, otherwise it assumes the data is Oxford Nanopore then <a class="reference external" href="https://github.com/rrwick/Porechop">PoreChop</a> is utilized.</p></li>
+<li><p>If Illumina reads are utilized, an optional bbmap step to remove the phiX174 genome is available or user provided contaminate genome. Phage phiX174 is a common contaminant within the Illumina platform as their library spike-in control. We highly recommend this removal if viral analysis is conducted, as it would provide false positives to ssDNA microviruses within a sample.</p></li>
+<li><p>We include a <code class="docutils literal notranslate"><span class="pre">`--skip_decon`</span></code> option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.</p></li>
+<li><p>In the formatting and gene prediction stage, contigs and genomes are checked for N repeats. These N repeats are removed by default.</p></li>
+<li><p>We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module <a class="reference external" href="https://github.com/raw-lab/metaome_stats">Metaome Stats</a>.</p></li>
+<li><p>Contigs can be converted to pORFs using <a href="#id14"><span class="problematic" id="id15">`Prodigal`_</span></a> , <a class="reference external" href="https://github.com/unipept/FragGeneScanRs/">FragGeneScanRs</a>, and <a class="reference external" href="https://github.com/apcamargo/prodigal-gv">Prodigal-gv</a> as specified by user preference.</p></li>
+<li><p>Scaffold annotation is not recommended due to N’s providing ambiguous annotation.</p></li>
+<li><p>Both Prodigal and FragGeneScanRs can be used via our <code class="docutils literal notranslate"><span class="pre">`--super`</span></code> option, and we recommend using FragGeneScanRs for samples rich in eukaryotes.</p></li>
+<li><p>FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10&lt;sup&gt;-9&lt;/sup&gt; ).</p></li>
+</ul>
+</section>
+<section id="input-file-formats">
+<h2>Input File Formats<a class="headerlink" href="#input-file-formats" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>From any NextGen sequencing technology (from Illumina, PacBio, Oxford Nanopore)</p></li>
+<li><p>Type 1 raw reads (.fastq format)</p></li>
+<li><p>Type 2 nucleotide fasta (.fasta, .fa, .fna, .ffn format), assembled raw reads into contigs</p></li>
+<li><p>Type 3 protein fasta (.faa format), assembled contigs which genes are converted to amino acid sequence</p></li>
+</ul>
+</section>
+<section id="output-files">
+<h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>If an output directory is given, that folder will be created where all files are stored.</p></li>
+<li><p>If no output directory is specified, the ‘results_metacerberus’ subfolder will be created <strong>in the current directory.</strong></p></li>
+<li><p>Gage/Pathview R analysis provided as separate scripts within R.</p></li>
+</ul>
+</section>
+<section id="visualization-of-outputs">
+<h2>Visualization of Outputs<a class="headerlink" href="#visualization-of-outputs" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>We use Plotly to visualize the data</p></li>
+<li><p>Once the program is finished running, the html reports with the visuals will be saved to the _last_ step of the pipeline.</p></li>
+<li><p>The HTML files require plotly.js to be present. One has been provided in the package and is saved to the report folder.</p></li>
+</ul>
+</section>
+</section>
+<section id="annotation">
+<h1>Annotation<a class="headerlink" href="#annotation" title="Permalink to this heading"></a></h1>
+<dl class="simple">
+<dt>. image:: metacerberus-Rules.jpg</dt><dd><dl class="field-list simple">
+<dt class="field-odd">target<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg">https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg</a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<ul class="simple">
+<li><p><strong>Rule 1</strong> is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.</p></li>
+<li><p><strong>Rule 2</strong> is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).</p></li>
+<li><p><strong>Rule 3</strong> is to ensure overlapping dual domains are not missed. This is the dual independent overlapping domain module for convergent binary domain pORFs. If two domains within a pORF are overlapping &lt;10 amino acids (e.g, COG1 and COG4) then both domains are counted and reported due to the dual domain issue within a single pORF. If a function hits multiple pathways within an accession, both are counted, in pathway roll-up, as many proteins function in multiple pathways.</p></li>
+<li><p><strong>Rule 4</strong> is the equal match counter to avoid missing high quality matches within the same protein. This is an independent accession module for a single pORF: if both hits within the same database have equal values for both e-value and bit score but are different accessions from the same database (e.g., KO1 and KO3) then both are reported.</p></li>
+<li><p><strong>Rule 5</strong> is the ‘winner take all’ match rule for providing the best match. It is computed as the winner takes all module for overlapping pORFs: if two HMM hits are overlapping (&gt;10 amino acids) from the same database the lowest resulting e-value and highest bit score wins.</p></li>
+<li><p><strong>Rule 6</strong> is to avoid partial or fractional hits being counted. This ensures that only whole discrete integer counting (e.g., 0, 1, 2 to n) are computed and that partial or fractional counting is excluded.</p></li>
+</ul>
+</section>
+<section id="quick-start-examples">
+<h1>Quick Start Examples<a class="headerlink" href="#quick-start-examples" title="Permalink to this heading"></a></h1>
+<section id="genome-examples">
+<h2>Genome examples<a class="headerlink" href="#genome-examples" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>All databases</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">prodigal</span> <span class="k">lambda</span><span class="o">.</span><span class="n">fna</span> <span class="o">--</span><span class="n">hmm</span> <span class="n">ALL</span> <span class="o">--</span><span class="n">dir_out</span> <span class="n">lambda_dir</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only KEGG/FOAM all</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">prodigal</span> <span class="k">lambda</span><span class="o">.</span><span class="n">fna</span> <span class="o">--</span><span class="n">hmm</span> <span class="n">KOFam_all</span> <span class="o">--</span><span class="n">dir_out</span> <span class="n">lambda_ko</span><span class="o">-</span><span class="n">only_dir</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only KEGG/FOAM prokaryotic centric</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">prodigal</span> <span class="n">ecoli</span><span class="o">.</span><span class="n">fna</span> <span class="o">--</span><span class="n">hmm</span> <span class="n">KOFam_prokaryote</span> <span class="o">--</span><span class="n">dir_out</span> <span class="n">ecoli_ko</span><span class="o">-</span><span class="n">only_dir</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only KEGG/FOAM eukaryotic centric</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">fraggenescan</span> <span class="n">human</span><span class="o">.</span><span class="n">fna</span> <span class="o">--</span><span class="n">hmm</span> <span class="n">KOFam_eukaryote</span> <span class="o">--</span><span class="n">dir_out</span> <span class="n">human_ko</span><span class="o">-</span><span class="n">only_dir</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Only Viral/Phage databases</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">prodigal</span> <span class="k">lambda</span><span class="o">.</span><span class="n">fna</span> <span class="o">--</span><span class="n">hmm</span> <span class="n">VOG</span><span class="p">,</span> <span class="n">PHROG</span> <span class="o">--</span><span class="n">dir_out</span> <span class="n">lambda_vir</span><span class="o">-</span><span class="n">only_dir</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can pick any single database you want for your analysis including KOFam_all, COG, VOG, PHROG, CAZy or specific KO databases for eukaryotes and prokaryotes (KOFam_eukaryote or KOFam_prokaryote).</p>
+</div>
+<ul class="simple">
+<li><p>Custom HMM</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –prodigal lambda.fna –hmm Custom.hmm –dir_out lambda_vir-only_dir</p>
+</div></blockquote>
+</section>
+<section id="illumina-data">
+<h2>Illumina data<a class="headerlink" href="#illumina-data" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –prodigal [input_folder] –illumina –meta –dir_out [out_folder]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Eukaryotes and Viruses metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –fraggenescan [input_folder] –illumina –meta –dir_out [out_folder]</p>
+</div></blockquote>
+</section>
+<section id="nanopore-data">
+<h2>Nanopore data<a class="headerlink" href="#nanopore-data" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –prodigal [input_folder]  –nanopore –meta –dir_out [out_folder]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Eukaryotes and Viruses metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –fraggenescan [input_folder] –nanopore –meta –dir_out [out_folder]</p>
+</div></blockquote>
+</section>
+<section id="pacbio-data">
+<h2>PacBio data<a class="headerlink" href="#pacbio-data" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –prodigal [input_folder]  –pacbio –meta –dir_out [out_folder]</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Eukaryotes and Viruses metagenomes/metatranscriptomes</p></li>
+</ul>
+<blockquote>
+<div><p>conda activate
+metacerberus.py –fraggenescan [input_folder]  –pacbio –meta –dir_out [out_folder]</p>
+</div></blockquote>
+</section>
+<section id="super-both-methods">
+<h2>SUPER (both methods)<a class="headerlink" href="#super-both-methods" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span>
+<span class="n">metacerberus</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="nb">super</span> <span class="p">[</span><span class="n">input_folder</span><span class="p">]</span>  <span class="o">--</span><span class="n">pacbio</span><span class="o">/--</span><span class="n">nanopore</span><span class="o">/--</span><span class="n">illumina</span> <span class="o">--</span><span class="n">meta</span> <span class="o">--</span><span class="n">dir_out</span> <span class="p">[</span><span class="n">out_folder</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Fraggenescan will work for prokaryotes and viruses/bacteriophage but prodigal will not work well for eukaryotes.</p>
+</div>
+</section>
+</section>
+<section id="prerequisites-and-dependencies">
+<h1>Prerequisites and Dependencies<a class="headerlink" href="#prerequisites-and-dependencies" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><strong>python &gt;= 3.8</strong></p></li>
+</ul>
+<section id="available-from-bioconda-external-tool-list">
+<h2>Available from Bioconda - external tool list<a class="headerlink" href="#available-from-bioconda-external-tool-list" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Tool</p></td>
+<td><p>Version</p></td>
+<td><p>Publication</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/s-andrews/FastQC">Fastqc</a></p></td>
+<td><p>0.12.1</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id16"><span class="problematic" id="id17">`Fastp`_</span></a></p></td>
+<td><p>0.23.4</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/bty560">Chen et al. 2018</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/rrwick/Porechop">PoreChop</a></p></td>
+<td><p>0.2.4</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/BioInfoTools/BBMap">bbmap</a></p></td>
+<td><p>39.06</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id18"><span class="problematic" id="id19">`Prodigal`_</span></a></p></td>
+<td><p>2.6.3</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.1186/1471-2105-11-119">Hyatt et al. 2010</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/unipept/FragGeneScanRs/">FragGeneScanRs</a></p></td>
+<td><p>v1.1.0</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.1186/s12859-022-04736-5">Van der Jeugt et al. 2022</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/apcamargo/prodigal-gv">Prodigal-gv</a></p></td>
+<td><p>2.2.1</p></td>
+<td><p><a class="reference external" href="https://www.nature.com/articles/s41587-023-01953-y">Camargo et al. 2023</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/deprekate/PHANOTATE">Phanotate</a></p></td>
+<td><p>1.5.0</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.1093/bioinformatics/btz265">McNair et al. 2019</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/EddyRivasLab/hmmer">HMMR</a></p></td>
+<td><p>3.4</p></td>
+<td><p><a class="reference external" href="https://doi.org/10.1186/1471-2105-11-431">Johnson et al. 2010</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="metacerberus-databases">
+<h1>Metacerberus Databases<a class="headerlink" href="#metacerberus-databases" title="Permalink to this heading"></a></h1>
+<p>All pre-formatted databases are present at <a class="reference external" href="https://osf.io/3uz2j">OSF</a>.</p>
+<section id="database-sources">
+<h2>Database sources<a class="headerlink" href="#database-sources" title="Permalink to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The KEGG database contains KOs related to Human disease. It is possible that these will show up in the results, even when analyzing microbes. eggNOG and FunGene database are coming soon. If you want a custom HMM build please let us know by email or leaving an issue.</p>
+</div>
+</section>
+<section id="custom-database">
+<h2>Custom Database<a class="headerlink" href="#custom-database" title="Permalink to this heading"></a></h2>
+<p>To run a custom database, you need a HMM containing the protein family of interest and a metadata sheet describing the HMM required for look-up tables and downstream analysis. For the metadata information you need an ID that matches the HMM and a function or hierarchy. See example below:</p>
+<section id="example-metadata-sheet">
+<h3>Example Metadata sheet<a class="headerlink" href="#example-metadata-sheet" title="Permalink to this heading"></a></h3>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>ID</p></td>
+<td><p>Function</p></td>
+</tr>
+<tr class="row-even"><td><p>HMM1</p></td>
+<td><p>Sugarase</p></td>
+</tr>
+<tr class="row-odd"><td><p>HMM2</p></td>
+<td><p>Coffease</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="metacerberus-options">
+<h1>Metacerberus Options<a class="headerlink" href="#metacerberus-options" title="Permalink to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the Metacerberus environment is not used, make sure the dependencies are in PATH or specified in the config file.</p>
+</div>
+<ul class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> with the options required for your project.</p></li>
+</ul>
+<p>Usage of <code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code>:
+.. Note:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">are</span> <span class="n">different</span> <span class="n">options</span><span class="o">/</span><span class="n">arguments</span> <span class="n">to</span> <span class="n">modify</span> <span class="n">the</span> <span class="n">execution</span> <span class="n">of</span> <span class="n">Metacerberus</span><span class="o">.</span>
+</pre></div>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Argument/Option</p></td>
+<td><p>Function [Default]</p></td>
+<td><p>Usage Format</p></td>
+<td><p>Accepted format</p></td>
+<td><p>Example (Type as one line)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--setup</span></code></p></td>
+<td><p>Setup additional dependencies [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--setup</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--setup</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--update</span></code></p></td>
+<td><p>Update downloaded databases [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--update</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--update</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--list-db</span></code></p></td>
+<td><p>List available and downloaded databases [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--list-db</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--list-db</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--download</span></code></p></td>
+<td><p>Downloads selected HMMs. Use the option <code class="docutils literal notranslate"><span class="pre">--list-db</span></code> for a list of available databases, default is to download all available databases</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--download</span> <span class="pre">[DOWNLOAD</span> <span class="pre">...]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--download</span> <span class="pre">[.HMM</span> <span class="pre">FILE]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--download</span> <span class="pre">path/to/example/directory.hmm</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--uninstall</span></code></p></td>
+<td><p>Remove downloaded databases and FragGeneScan+ [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--uninstall</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--uninstall</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<section id="input-file-arguments">
+<h2><strong>Input File Arguments:</strong><a class="headerlink" href="#input-file-arguments" title="Permalink to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>At least one</strong> sequence is required.</p>
+<p><strong>Accepted formats</strong>: [.fastq, .fq, .fasta, .fa, .fna, .ffn, .faa]</p>
+<blockquote>
+<div><p>__Example:__</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--prodigal</span> <span class="pre">file1.fasta</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--config</span> <span class="pre">file.config</span></code></p></li>
+</ul>
+<p>If a sequence is given in [.fastq, .fq] format, one of <code class="docutils literal notranslate"><span class="pre">--nanopore</span></code>, <code class="docutils literal notranslate"><span class="pre">--illumina</span></code>, or <code class="docutils literal notranslate"><span class="pre">--pacbio</span></code> <strong>is required.</strong>:</p>
+<p><strong>Option format interpretation:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--setup</span></code> = accepts no additional options</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--download</span> <span class="pre">DOWNLOAD</span></code> = accepts one option, (represented by capitalized command ‘DOWNLOAD’)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--fraggenescan</span> <span class="pre">FRAGGENESCAN</span> <span class="pre">[FRAGGENESCAN...]</span></code> = accepts one or greater options (represented by capitalized commands)</p></li>
+</ul>
+</div></blockquote>
+</div>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Argument/Option</p></td>
+<td><p>Function</p></td>
+<td><p>Usage Format</p></td>
+<td><p>Accepted format</p></td>
+<td><p># Options Accepted</p></td>
+<td><p>Example (Type as one line)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-c</span></code> or <code class="docutils literal notranslate"><span class="pre">--config</span></code></p></td>
+<td><p>Path to config file, command line takes priority</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">CONFIG</span></code> or <code class="docutils literal notranslate"><span class="pre">--config</span> <span class="pre">CONFIG</span></code></p></td>
+<td><p>Path to config file</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">-c</span> <span class="pre">path/to/config/file</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--prodigal</span></code></p></td>
+<td><p>Prokaryote nucleotide sequence (includes microbes, bacteriophage)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--prodigal</span> <span class="pre">PRODIGAL</span> <span class="pre">[PRODIGAL</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--prodigal</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--fraggenescan</span></code></p></td>
+<td><p>Eukaryote nucleotide sequence (includes other viruses, works all around for everything)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--fraggenescan</span> <span class="pre">FRAGGENESCAN</span> <span class="pre">[FRAGGENESCAN</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--fraggenescan</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--super</span></code></p></td>
+<td><p>Run sequence in <strong>both</strong> <cite>–prodigal</cite> and <cite>–fraggenescan</cite> modes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--super</span> <span class="pre">SUPER</span> <span class="pre">[SUPER</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--super</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--prodigalgv</span></code></p></td>
+<td><p>Giant virus nucleotide sequence</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--prodigalgv</span> <span class="pre">PRODIGALGV</span> <span class="pre">[PRODIGALGV</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--prodigalgv</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--phanotate</span></code></p></td>
+<td><p>Phage sequence</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--phanotate</span> <span class="pre">PHANOTATE</span> <span class="pre">[PHANOTATE</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--phanotate</span>&#160; <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--protein</span></code> or <code class="docutils literal notranslate"><span class="pre">--amino</span></code></p></td>
+<td><p>Protein Amino Acid sequence</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--protein</span> <span class="pre">PROTEIN</span> <span class="pre">[PROTEIN</span> <span class="pre">...]</span></code> or <code class="docutils literal notranslate"><span class="pre">--amino</span> <span class="pre">PROTEIN</span> <span class="pre">[PROTEIN</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--protein</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code> or <code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--amino</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--hmmer-tsv</span></code></p></td>
+<td><p>Annotations tsv file from HMMER (experimental)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--hmmer-tsv</span> <span class="pre">HMMER_TSV</span> <span class="pre">[HMMER_TSV</span> <span class="pre">...]</span></code></p></td>
+<td><p>Sequence file</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--hmmer-tsv</span> <span class="pre">FILE1</span> <span class="pre">FILE2...</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--class</span></code></p></td>
+<td><p>path to a tsv file which has class information for the samples. If this file is included, scripts will be included to run Pathview in R</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--class</span> <span class="pre">CLASS</span></code></p></td>
+<td><p>Path to TSV file</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--class</span> <span class="pre">TSV_FILE1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--illumina</span></code></p></td>
+<td><p>Specifies that the given FASTQ files are from Illumina</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--illumina</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--illumina</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--nanopore</span></code></p></td>
+<td><p>Specifies that the given FASTQ files are from Nanopore</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--nanopore</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--nanopore</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--pacbio</span></code></p></td>
+<td><p>Specifies that the given FASTQ files are from PacBio</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--pacbio</span></code></p></td>
+<td><p>N/A</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--pacbio</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="output-options">
+<h2><strong>Output options:</strong><a class="headerlink" href="#output-options" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Argument/Option</p></td>
+<td><p>Function [DEFAULT]</p></td>
+<td><p>Usage Format</p></td>
+<td><p>Accepted format</p></td>
+<td><p># Options Accepted</p></td>
+<td><p>Example (Type as one line)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--dir-out</span></code></p></td>
+<td><p>path to output directory, defaults to “results-<cite>” in current directory. [./results-</cite>]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--dir-out</span> <span class="pre">DIR_OUT</span></code></p></td>
+<td><p>output file path</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--dir-out</span> <span class="pre">path/to/output/file</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--replace</span></code></p></td>
+<td><p>Flag to replace existing files. [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--replace</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--replace</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--keep</span></code></p></td>
+<td><p>Flag to keep temporary files. [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--keep</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--keep</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--tmpdir</span></code></p></td>
+<td><p>Temp directory for RAY (experimental) [system tmp dir]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--tmpdir</span> <span class="pre">TMPDIR</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--tmpdir</span> <span class="pre">TEMPFILE1</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="database-options">
+<h2><strong>Database options:</strong><a class="headerlink" href="#database-options" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Argument/Option</p></td>
+<td><p>Function [DEFAULT]</p></td>
+<td><p>Usage Format</p></td>
+<td><p>Accepted format</p></td>
+<td><p># Options Accepted</p></td>
+<td><p>Example (Type as one line)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--hmm</span></code></p></td>
+<td><p>A list of databases for HMMER. Use the option <code class="docutils literal notranslate"><span class="pre">--list-db</span></code> for a list of available databases [KOFam_all]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--hmm</span> <span class="pre">HMM</span> <span class="pre">[HMM</span> <span class="pre">...]</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>=&gt;1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--hmm</span> <span class="pre">DATABASE1</span> <span class="pre">DATABASE2...</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--db-path</span></code></p></td>
+<td><p>Path to folder of databases [Default: under the library path of metacerberus]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--db-path</span> <span class="pre">DB_PATH</span></code></p></td>
+<td><p>path to databases folder</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--db-path</span> <span class="pre">path/to/databases/folder</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="optional-arguments">
+<h2><strong>Optional Arguments:</strong><a class="headerlink" href="#optional-arguments" title="Permalink to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>Argument/Option</p></td>
+<td><p>Function [DEFAULT]</p></td>
+<td><p>Usage Format</p></td>
+<td><p>Accepted format</p></td>
+<td><p># Options Accepted</p></td>
+<td><p>Example (Type as one line)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--meta</span></code></p></td>
+<td><p>Metagenomic nucleotide sequences <strong>(for prodigal)</strong> [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--meta</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--meta</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--scaffolds</span></code></p></td>
+<td><p>Sequences are treated as scaffolds [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--scaffolds</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--scaffolds</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--minscore</span></code></p></td>
+<td><p>Score cutoff for parsing HMMER results [60]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--minscore</span> <span class="pre">MINSCORE</span></code></p></td>
+<td><p>whole integer value</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--minscore</span> <span class="pre">50</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--evalue</span></code></p></td>
+<td><p>E-value cutoff for parsing HMMER results [1e-09]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--evalue</span> <span class="pre">EVALUE</span></code></p></td>
+<td><p>E-value</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--evalue</span> <span class="pre">[E-value]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-decon</span></code></p></td>
+<td><p>Skip decontamination step. [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--skip-decon</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--skip-decon</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--skip-pca</span></code></p></td>
+<td><p>Skip PCA. [False]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--skip-pca</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--skip-pca</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--cpus</span></code></p></td>
+<td><p>Number of CPUs to use per task. System will try to detect available CPUs if not specified [Auto Detect]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--cpus</span> <span class="pre">CPUS</span></code></p></td>
+<td><p>whole integer value</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--cpus</span> <span class="pre">16</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--chunker</span></code></p></td>
+<td><p>Split files into smaller chunks, in Megabytes [Disabled by default]</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--chunker</span> <span class="pre">CHUNKER</span></code></p></td>
+<td><p>whole integer value</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--chunker</span> <span class="pre">300</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--grouped</span></code></p></td>
+<td><p>Group multiple fasta files into a single file before processing. When used with <cite>–chunker</cite> (see above) can improve speed</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--grouped</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--grouped</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--version</span></code> or <code class="docutils literal notranslate"><span class="pre">-v</span></code></p></td>
+<td><p>show the version number and exit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--version</span></code> or <code class="docutils literal notranslate"><span class="pre">-v</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--version</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td><p>show this help message and exit</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-h</span></code> or <code class="docutils literal notranslate"><span class="pre">--help</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span></code> option</p></td>
+<td><p>N/A</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">-h</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--adapters</span></code></p></td>
+<td><p>FASTA File containing adapter sequences for trimming</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--adapters</span> <span class="pre">ADAPTERS</span></code></p></td>
+<td><p>FASTA file</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--adapters</span> <span class="pre">/path/to/FASTA/file</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">--qc_seq</span></code></p></td>
+<td><p>FASTA File containing control sequences for decontamination</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">--qc_seq</span> <span class="pre">QC_SEQ</span></code></p></td>
+<td><p>FASTA file</p></td>
+<td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">metacerberus.py</span> <span class="pre">--qc_seq</span> <span class="pre">/path/to/FASTA/file</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Arguments/options that start with <code class="docutils literal notranslate"><span class="pre">--</span></code> can also be set in a config file (specified via <code class="docutils literal notranslate"><span class="pre">-c</span></code>). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see <a class="reference external" href="https://goo.gl/R74nmi">syntax</a>. In general, <strong>command-line values override config file values which override defaults.</strong></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 <section id="indices-and-tables">
