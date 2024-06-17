@@ -48,7 +48,7 @@ About
 Metacerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). Metacerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-. image:: image.jpg
+.. image:: image.jpg
    :width: 600px
    :target: https://github.com/raw-lab/metacerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
 
@@ -188,7 +188,7 @@ In command line, type:
 Overview 
 =============
 
-. image:: metacerberus Workflow.jpg
+.. image:: metacerberus Workflow.jpg
    :width: 600px
    :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg
 
@@ -246,7 +246,7 @@ Visualization of Outputs
 Annotation
 ===========
 
-. image:: metacerberus-Rules.jpg
+.. image:: metacerberus-Rules.jpg
    :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg
 
 - **Rule 1** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
@@ -319,6 +319,7 @@ Illumina data
 ------------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -326,6 +327,7 @@ Illumina data
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -335,6 +337,7 @@ Nanopore data
 -----------------
 - Bacterial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -343,6 +346,7 @@ Nanopore data
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -353,6 +357,7 @@ PacBio data
 -----------------------
 - Microbial, Archaea and Bacteriophage metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -361,6 +366,7 @@ PacBio data
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 ::
 
    conda activate 
@@ -369,6 +375,7 @@ PacBio data
 
 SUPER (both methods)
 ----------------------
+
 ::
 
    conda activate 
@@ -405,7 +412,7 @@ Available from Bioconda - external tool list
 | `HMMR`_             |     3.4          |    `Johnson et al. 2010`_    |
 +---------------------+------------------+------------------------------+
 .. _Fastqc: https://github.com/s-andrews/FastQC
-.. _Fastp: https://github.com/OpenGene/fastp>
+.. _Fastp: https://github.com/OpenGene/fastp
 .. _PoreChop: https://github.com/rrwick/Porechop
 .. _bbmap: https://github.com/BioInfoTools/BBMap
 .. _Prodigal: https://github.com/hyattpd/Prodigal
@@ -533,11 +540,14 @@ Metacerberus Options
 - Run ``metacerberus.py`` with the options required for your project.
 
 Usage of ``metacerberus.py``: 
+
 .. Note::
    The following are different options/arguments to modify the execution of Metacerberus.
 
+
 **Setup arguments:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
 |Argument/Option  | Function [Default]                                                                                                                        | Usage Format                   | Accepted format            |            Example (Type as one line)         |
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
@@ -554,6 +564,7 @@ Usage of ``metacerberus.py``:
 
 **Input File Arguments:**
 ----------------------------
+
 .. important:: 
   **At least one** sequence is required.
 
@@ -715,7 +726,6 @@ For example (class.tsv):
 +---------+--------------+
 
 - The output is saved under the step_10-visualizeData/combined/pathview folder. Also, **at least 4 samples** need to be used for this type of analysis.  
-  
 - GAGE and PathView also **require internet access** to be able to download information from a database. 
 - MetaCerberus will save a bash script 'run_pathview.sh' in the step_10-visualizeData/combined/pathview directory along with the KO Counts tsv files and the class file for running manually in case MetaCerberus was run on a cluster without access to the internet.
 
@@ -724,6 +734,7 @@ Multiprocessing MultiComputing with RAY
 
 - MetaCerberus uses Ray for distributed processing. This is compatible with both multiprocessing on a single node (computer) or multiple nodes in a cluster.  
 MetaCerberus has been tested on a cluster using `Slurm`_.  
+
 .. _Slurm: https://github.com/SchedMD/slurm
 
 .. :important::
@@ -775,6 +786,7 @@ DESeq2 and Edge2 Type I errors
 ==================================
 
 Both edgeR and DeSeq2 R have the highest sensitivity when compared to other algorithms that control type-I error when the FDR was at or below 0.1. EdgeR and DESeq2 all perform fairly well in simulation and via data splitting (so no parametric assumptions). Typical benchmarks will show limma having stronger FDR control across all types of datasets (it’s hard to beat the moderated t-test), and edgeR and DESeq2 having higher sensitivity for low counts (makes sense as limma has to filter these out / down-weight them to use the normal model on log counts). Further information about type I errors are present from Mike Love's vignette `here`_.
+
 .. _here: https://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#multi-factor-designs
 
 
@@ -794,17 +806,29 @@ Publication
 -------------
 Figueroa III JL, Dhungel E, Bellanger M, Brouwer CR, White III RA. 2024.
 MetaCerberus: distributed highly parallelized HMM-based processing for robust functional annotation across the tree of life. `Bioinformatics`_.
+
 .. _Bioinformatics: https://doi.org/10.1093/bioinformatics/btae119
 
 Pre-print
 ------------
 Figueroa III JL, Dhungel E, Brouwer CR, White III RA. 2023.
 MetaCerberus: distributed highly parallelized HMM-based processing for robust functional annotation across the tree of life. `bioRxiv`_.
+
 .. _bioRxiv: https://www.biorxiv.org/content/10.1101/2023.08.10.552700v1
 
+Contact Us
+=============
 
+The informatics point-of-contact for this project is `Dr. Richard Allen White III`_.  
+If you have any questions or feedback, please feel free to get in touch by email.  
+`Dr. Richard Allen White III email:`_ 
+`Jose Luis Figueroa III`_
+Or `open an issue`_.  
 
-
+.. _Dr. Richard Allen White III: https://github.com/raw-lab
+.. _Dr. Richard Allen White III email: mailto:rwhit101@charlotte.edu
+.. _Jose Luis Figueroa III: mailto:jlfiguer@charlotte.edu
+.. _open an issue: https://github.com/raw-lab/metacerberus/issues
 
 
 
