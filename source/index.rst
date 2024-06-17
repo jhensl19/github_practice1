@@ -48,9 +48,8 @@ About
 Metacerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). Metacerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. image:: GitHub_Logo.jpg
+.. image:: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Screenshot_20240614_205914_Gallery.jpg
    :width: 600px
-   :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Screenshot_20240614_205914_Gallery.jpg
 
 General Terminal Command Line Links and Info for Novices
 =========================================================
@@ -188,9 +187,8 @@ In command line, type:
 Overview 
 =============
 
-.. image:: metacerberus Workflow.jpg
+.. image:: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg
    :width: 600px
-   :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg
 
 General Info
 ---------------
@@ -246,8 +244,8 @@ Visualization of Outputs
 Annotation
 ===========
 
-.. image:: metacerberus-Rules.jpg
-   :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg
+.. image:: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg
+   :width: 600px 
 
 - **Rule 1** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
 - **Rule 2** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
