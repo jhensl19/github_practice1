@@ -48,9 +48,9 @@ About
 Metacerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). Metacerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. image:: image.jpg
+.. image:: GitHub_Logo.jpg
    :width: 600px
-   :target: https://github.com/raw-lab/metacerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
+   :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Screenshot_20240614_205914_Gallery.jpg
 
 General Terminal Command Line Links and Info for Novices
 =========================================================
