@@ -22,23 +22,23 @@ MetaCerberus
 .. |Downloads PePy weekly| image:: https://static.pepy.tech/badge/MetaCerberus/week
    :target: https://pepy.tech/project/MetaCerberus
 
-.. |BioConda Install Downloads| image:: https://anaconda.org/bioconda/metacerberus/badges/downloads.svg
-   :target: https://anaconda.org/bioconda/metacerberus
+.. |BioConda Install Downloads| image:: https://anaconda.org/bioconda/`/badges/downloads.svg
+   :target: https://anaconda.org/bioconda/`
 
-.. |Version| image:: https://anaconda.org/bioconda/metacerberus/badges/version.svg
-   :target: https://anaconda.org/bioconda/metacerberus
+.. |Version| image:: https://anaconda.org/bioconda/`/badges/version.svg
+   :target: https://anaconda.org/bioconda/`
 
-.. |Anaconda-Server Latest Release date| image:: https://anaconda.org/bioconda/metacerberus/badges/latest_release_date.svg
-   :target: https://anaconda.org/bioconda/metacerberus
+.. |Anaconda-Server Latest Release date| image:: https://anaconda.org/bioconda/`/badges/latest_release_date.svg
+   :target: https://anaconda.org/bioconda/`
 
-.. |Anaconda-Server Relative Release date| image:: https://anaconda.org/bioconda/metacerberus/badges/latest_release_relative_date.svg
-   :target: https://anaconda.org/bioconda/metacerberus
+.. |Anaconda-Server Relative Release date| image:: https://anaconda.org/bioconda/`/badges/latest_release_relative_date.svg
+   :target: https://anaconda.org/bioconda/`
 
-.. |Anaconda-Server Platforms| image:: https://anaconda.org/bioconda/metacerberus/badges/platforms.svg
-   :target: https://anaconda.org/bioconda/metacerberus
+.. |Anaconda-Server Platforms| image:: https://anaconda.org/bioconda/`/badges/platforms.svg
+   :target: https://anaconda.org/bioconda/`
 
-.. |Anaconda-Server License| image:: https://anaconda.org/bioconda/metacerberus/badges/license.svg
-   :target: https://anaconda.org/bioconda/metacerberus      
+.. |Anaconda-Server License| image:: https://anaconda.org/bioconda/`/badges/license.svg
+   :target: https://anaconda.org/bioconda/`      
 .. note:: MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
 
 About
@@ -105,7 +105,7 @@ In the command line, type:
   cd MetaCerberus
   bash install_metacerberus.sh
   conda activate MetaCerberus-1.3.0
-  metacerberus.py --download
+  `.py --download
 
 
 Installing MetaCerberus 1.2.1 and below (due to current Mamba and Conda errors)
@@ -137,9 +137,9 @@ In command line, type:
 
 ::
 
-   mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
-   conda activate metacerberus
-   metacerberus.py --setup
+   mamba create -n ` -c bioconda -c conda-forge `
+   conda activate `
+   `.py --setup
 
 OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
  
@@ -148,8 +148,8 @@ OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
 In command line, type:
 ::
 
-   conda create -y -n metacerberus
-   conda activate metacerberus
+   conda create -y -n `
+   conda activate `
    conda config --env --set subdir osx-64
 
 2. Install Mamba, Python, and Pydantic inside the environment
@@ -164,8 +164,8 @@ In command line, type:
 In command line, type:
 ::
 
-   mamba install -y -c bioconda -c conda-forge metacerberus
-   metacerberus.py --setup
+   mamba install -y -c bioconda -c conda-forge `
+   `.py --setup
 
 
 .. note:: 
@@ -179,9 +179,9 @@ In command line, type:
 
 ::
 
-   conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
-   conda activate metacerberus
-   metacerberus.py --setup
+   conda create -n ` -c conda-forge -c bioconda ` -y
+   conda activate `
+   `.py --setup
 
 Overview 
 =============
@@ -265,8 +265,8 @@ Genome examples
 
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
+   conda activate `
+   `.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
 
 - Only KEGG/FOAM all
@@ -274,8 +274,8 @@ Genome examples
 
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+   conda activate `
+   `.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
 
 
 - Only KEGG/FOAM prokaryotic centric
@@ -283,8 +283,8 @@ Genome examples
 
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
+   conda activate `
+   `.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
 
@@ -293,14 +293,14 @@ Genome examples
 
 ::
 
-   conda activate metacerberus
-   metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
+   conda activate `
+   `.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
 - Only Viral/Phage databases
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
+   conda activate `
+   `.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
 .. tip::
 
@@ -310,8 +310,8 @@ Genome examples
 ~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
+   conda activate `
+   `.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
 Illumina data
 ------------------
@@ -319,15 +319,15 @@ Illumina data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate `
+   `.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate `
+   `.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
 Nanopore data
 -----------------
@@ -335,16 +335,16 @@ Nanopore data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
+   conda activate `
+   `.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
+   conda activate `
+   `.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
 
 PacBio data
@@ -353,24 +353,24 @@ PacBio data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate `
+   `.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate metacerberus
-   metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate `
+   `.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 SUPER (both methods)
 ----------------------
 ::
 
-   conda activate metacerberus
-   metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
+   conda activate `
+   `.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
 
 .. important:: 
@@ -545,7 +545,7 @@ Usage of ``metacerberus.py``:
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
 | ``--list-db``   | List available and downloaded databases [False]                                                                                           | ``--list-db``                  | N/A                        | ``metacerberus.py --list-db``                 | 
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
-| ``--download``  | Downloads selected HMMs. Use the option ```--list-db``` for a list of available databases, default is to download all available databases | ``--download [DOWNLOAD ...]``` | ``--download [.HMM FILE]`` | ``--download path/to/example/directory.hmm``  |
+| ``--download``  | Downloads selected HMMs. Use the option ``--list-db`` for a list of available databases, default is to download all available databases   | ``--download [DOWNLOAD ...]``  | ``--download [.HMM FILE]`` | ``--download path/to/example/directory.hmm``  |
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
 | ``--uninstall`` | Remove downloaded databases and FragGeneScan+ [False]                                                                                     | ``--uninstall``                | N/A                        | ``metacerberus.py --uninstall``               |
 +-----------------+-------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+----------------------------+-----------------------------------------------+
@@ -603,46 +603,67 @@ Usage of ``metacerberus.py``:
 **Output options:**
 ------------------------
 
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
-| Argument/Option | Function [DEFAULT]                                                                                          | Usage Format        | Accepted format          | # Options Accepted | Example (Type as one line)        |
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
-| ``--dir-out``   | path to output directory, defaults to "results-metacerberus" in current directory. [./results-metacerberus] | `--dir-out DIR_OUT` | output file path         | 1                  | ``--dir-out path/to/output/file`` |
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
-| ``--replace``   | Flag to replace existing files. [False]                                                                     | `--replace`         | `metacerberus.py` option | N/A                | ``metacerberus.py --replace``     |
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
-| ``--keep``      | Flag to keep temporary files. [False]                                                                       | `--keep`            | `metacerberus.py` option | N/A                | ``metacerberus.py --keep``        | 
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
-| ``--tmpdir``    | Temp directory for RAY (experimental) [system tmp dir]                                                      | `--tmpdir TMPDIR`   | `metacerberus.py` option | 1                  | ``--tmpdir TEMPFILE1``            |
-+-----------------+-------------------------------------------------------------------------------------------------------------+---------------------+--------------------------+--------------------+-----------------------------------+
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
+| Argument/Option | Function [DEFAULT]                                                                                          | Usage Format         | Accepted format            | # Options Accepted | Example (Type as one line)        |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
+| ``--dir-out``   | path to output directory, defaults to "results-`" in current directory. [./results-`]                       | ``--dir-out DIR_OUT``| output file path           | 1                  | ``--dir-out path/to/output/file`` |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
+| ``--replace``   | Flag to replace existing files. [False]                                                                     | ``--replace``        | ``metacerberus.py`` option | N/A                | ``metacerberus.py --replace``     |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
+| ``--keep``      | Flag to keep temporary files. [False]                                                                       | ``--keep``           | ``metacerberus.py`` option | N/A                | ``metacerberus.py --keep``        | 
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
+| ``--tmpdir``    | Temp directory for RAY (experimental) [system tmp dir]                                                      | ``--tmpdir TMPDIR``  | ``metacerberus.py`` option | 1                  | ``--tmpdir TEMPFILE1``            |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
 
 **Database options:**
 -------------------------
-|Argument/Option    | Function [DEFAULT]    | Usage Format    | Accepted format | # Options Accepted | Example (Type as one line)  |
-|:----------:  | :---------------------: | :------------------: | :------------------------: | :------- | :-----------------------------: |
-| `--hmm` | A list of databases for HMMER. Use the option `--list-db` for a list of available databases [KOFam_all] | `--hmm HMM [HMM ...]` | `metacerberus.py` option | =>1 | `metacerberus.py --hmm DATABASE1 DATABASE2...` |
-| `--db-path` | Path to folder of databases [Default: under the library path of MetaCerberus] | `--db-path DB_PATH` | path to databases folder | 1 | `--db-path path/to/databases/folder` | 
+
++----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
+|Argument/Option | Function [DEFAULT]                                                                                        | Usage Format            | Accepted format            | # Options Accepted | Example (Type as one line)                           |
++----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
+| ``--hmm``      | A list of databases for HMMER. Use the option ``--list-db`` for a list of available databases [KOFam_all] | ``--hmm HMM [HMM ...]`` | ``metacerberus.py`` option | =>1                | ``metacerberus.py --hmm DATABASE1 DATABASE2...``     |
++----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
+| ``--db-path``  | Path to folder of databases [Default: under the library path of MetaCerberus]                             | ``--db-path DB_PATH``   | path to databases folder   | 1                  | ``--db-path path/to/databases/folder``               | 
++----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
 
 **Optional Arguments:** 
 --------------------------- 
-|Argument/Option    | Function [DEFAULT]    | Usage Format    | Accepted format | # Options Accepted | Example (Type as one line)  |
-|:----------:  | :---------------------: | :------------------: | :------------------------: | :------- | :-----------------------------: |
-| `--meta` | Metagenomic nucleotide sequences **(for prodigal)** [False] | `--meta` | `metacerberus.py` option | N/A | `metacerberus.py --meta` |
-| `--scaffolds` | Sequences are treated as scaffolds [False] | `--scaffolds` | `metacerberus.py` option | N/A | `metacerberus.py --scaffolds` |  
-| `--minscore` | Score cutoff for parsing HMMER results [60] | `--minscore MINSCORE` | whole integer value | 1 | `metacerberus.py --minscore 50` |
-| `--evalue` | E-value cutoff for parsing HMMER results [1e-09] | `--evalue EVALUE` | E-value | 1 | `metacerberus.py --evalue [E-value]` | 
-|  `--skip-decon` | Skip decontamination step. [False] | `--skip-decon` | `metacerberus.py` option | N/A | `metacerberus.py --skip-decon` |
-| `--skip-pca` | Skip PCA. [False] | `--skip-pca` | `metacerberus.py` option | N/A | `metacerberus.py --skip-pca` | 
-| `--cpus` | Number of CPUs to use per task. System will try to detect available CPUs if not specified [Auto Detect] | `--cpus CPUS` | whole integer value | 1 | `metacerberus.py --cpus 16` |
-| `--chunker` | Split files into smaller chunks, in Megabytes [Disabled by default] | `--chunker CHUNKER` | whole integer value | 1 | `metacerberus.py --chunker 300` |
-| `--grouped` | Group multiple fasta files into a single file before processing. When used with `--chunker` (see above) can improve speed | `--grouped` | `metacerberus.py` option | N/A | `metacerberus.py --grouped` | 
-| `--version` or `-v` | show the version number and exit | `--version` or `-v` | `metacerberus.py` option | N/A | `metacerberus.py --version` |
-| `-h` or `--help` | show this help message and exit | `-h` or `--help` | `metacerberus.py` option | N/A | `metacerberus.py -h` |
-| `--adapters` | FASTA File containing adapter sequences for trimming | `--adapters ADAPTERS` | FASTA file | 1 | `metacerberus.py --adapters /path/to/FASTA/file` |   
-| `--qc_seq` | FASTA File containing control sequences for decontamination | `--qc_seq QC_SEQ` | FASTA file | 1 | `metacerberus.py --qc_seq /path/to/FASTA/file` |
+
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+|Argument/Option          | Function [DEFAULT]                                                                                                        | Usage Format            | Accepted format            | # Options Accepted | Example (Type as one line)                         |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--meta``              | Metagenomic nucleotide sequences **(for prodigal)** [False]                                                               | ``--meta``              | ``metacerberus.py`` option | N/A                | ``metacerberus.py --meta``                         |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--scaffolds``         | Sequences are treated as scaffolds [False]                                                                                | ``--scaffolds``         | ``metacerberus.py`` option | N/A                | ``metacerberus.py --scaffolds``                    |  
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--minscore``          | Score cutoff for parsing HMMER results [60]                                                                               | ``--minscore MINSCORE`` | whole integer value        | 1                  | ``metacerberus.py --minscore 50``                  |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--evalue``            | E-value cutoff for parsing HMMER results [1e-09]                                                                          | ``--evalue EVALUE``     | E-value                    | 1                  | ``metacerberus.py --evalue [E-value]``             | 
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--skip-decon``        | Skip decontamination step. [False]                                                                                        | ``--skip-decon``        | ``metacerberus.py`` option | N/A                | ``metacerberus.py --skip-decon``                   |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--skip-pca``          | Skip PCA. [False]                                                                                                         | ``--skip-pca``          | ``metacerberus.py`` option | N/A                | ``metacerberus.py --skip-pca``                     | 
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--cpus``              | Number of CPUs to use per task. System will try to detect available CPUs if not specified [Auto Detect]                   | ``--cpus CPUS``         | whole integer value        | 1                  | ``metacerberus.py --cpus 16``                      |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--chunker``           | Split files into smaller chunks, in Megabytes [Disabled by default]                                                       | ``--chunker CHUNKER``   | whole integer value        | 1                  | ``metacerberus.py --chunker 300``                  |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--grouped``           | Group multiple fasta files into a single file before processing. When used with `--chunker` (see above) can improve speed | ``--grouped``           | ``metacerberus.py`` option | N/A                | ``metacerberus.py --grouped``                      | 
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--version`` or ``-v`` | show the version number and exit                                                                                          | ``--version`` or ``-v`` | ``metacerberus.py`` option | N/A                | ``metacerberus.py --version``                      |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``-h`` or ``--help``    | show this help message and exit                                                                                           | ``-h`` or ``--help``    | ``metacerberus.py`` option | N/A                | ``metacerberus.py -h``                             |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--adapters``          | FASTA File containing adapter sequences for trimming                                                                      | ``--adapters ADAPTERS`` | FASTA file                 | 1                  | ``metacerberus.py --adapters /path/to/FASTA/file`` |   
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
+| ``--qc_seq``            | FASTA File containing control sequences for decontamination                                                               | ``--qc_seq QC_SEQ``     | FASTA file                 | 1                  | ``metacerberus.py --qc_seq /path/to/FASTA/file``   |
++-------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+----------------------------------------------------+
 
 .. note::
-   Arguments/options that start with ```--``` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
+   Arguments/options that start with ``--`` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
 .. _syntax: https://goo.gl/R74nmi
+
+
 
 
 
