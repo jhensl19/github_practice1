@@ -23,23 +23,23 @@ Metacerberus
 .. |Downloads PePy weekly| image:: https://static.pepy.tech/badge/metacerberus/week
    :target: https://pepy.tech/project/metacerberus
 
-.. |BioConda Install Downloads| image:: https://anaconda.org/bioconda/`/badges/downloads.svg
-   :target: https://anaconda.org/bioconda/`
+.. |BioConda Install Downloads| image:: https://anaconda.org/bioconda/metacerberus/badges/downloads.svg
+   :target: https://anaconda.org/bioconda/metacerberus
 
-.. |Version| image:: https://anaconda.org/bioconda/`/badges/version.svg
-   :target: https://anaconda.org/bioconda/`
+.. |Version| image:: https://anaconda.org/bioconda/metacerberus/badges/version.svg
+   :target: https://anaconda.org/bioconda/metacerberus
 
-.. |Anaconda-Server Latest Release date| image:: https://anaconda.org/bioconda/`/badges/latest_release_date.svg
-   :target: https://anaconda.org/bioconda/`
+.. |Anaconda-Server Latest Release date| image:: https://anaconda.org/bioconda/metacerberus/badges/latest_release_date.svg
+   :target: https://anaconda.org/bioconda/metacerberus
 
-.. |Anaconda-Server Relative Release date| image:: https://anaconda.org/bioconda/`/badges/latest_release_relative_date.svg
-   :target: https://anaconda.org/bioconda/`
+.. |Anaconda-Server Relative Release date| image:: https://anaconda.org/bioconda/metacerberus/badges/latest_release_relative_date.svg
+   :target: https://anaconda.org/bioconda/metacerberus
 
-.. |Anaconda-Server Platforms| image:: https://anaconda.org/bioconda/`/badges/platforms.svg
-   :target: https://anaconda.org/bioconda/`
+.. |Anaconda-Server Platforms| image:: https://anaconda.org/bioconda/metacerberus/badges/platforms.svg
+   :target: https://anaconda.org/bioconda/metacerberus
 
-.. |Anaconda-Server License| image:: https://anaconda.org/bioconda/`/badges/license.svg
-   :target: https://anaconda.org/bioconda/`      
+.. |Anaconda-Server License| image:: https://anaconda.org/bioconda/metacerberus/badges/license.svg
+   :target: https://anaconda.org/bioconda/metacerberus      
 
 .. note:: Metacerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
 
@@ -664,7 +664,6 @@ Usage of ``metacerberus.py``:
 .. note::
    Arguments/options that start with ``--`` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
 .. _syntax: https://goo.gl/R74nmi
-
 
 
 
