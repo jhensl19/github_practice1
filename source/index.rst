@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MetaCerberus
+Metacerberus
 =============
+
 |Paper| |Pre-print| |Downloads PePY overall| |Downloads PePy monthly| |Downloads PePy weekly| |BioConda Install Downloads| |Version| |Anaconda-Server Latest Release date| |Anaconda-Server Relative Release date| |Anaconda-Server Platforms| |Anaconda-Server License|
 
 .. |Paper| image:: https://img.shields.io/badge/paper-Bioinformatics-teal.svg?style=flat-square&maxAge=3600
@@ -13,14 +14,14 @@ MetaCerberus
 .. |Pre-print| image:: https://img.shields.io/badge/preprint-BioRxiv-red.svg?style=flat-square&maxAge=3600
    :target: https://doi.org/10.1101/2023.08.10.552700
 
-.. |Downloads PePY overall| image:: https://static.pepy.tech/badge/MetaCerberus
-   :target: https://pepy.tech/project/MetaCerberus
+.. |Downloads PePY overall| image:: https://static.pepy.tech/badge/metacerberus
+   :target: https://pepy.tech/project/metacerberus
 
-.. |Downloads PePY monthly| image:: https://static.pepy.tech/badge/MetaCerberus/month
-   :target: https://pepy.tech/project/MetaCerberus
+.. |Downloads PePY monthly| image:: https://static.pepy.tech/badge/metacerberus/month
+   :target: https://pepy.tech/project/metacerberus
 
-.. |Downloads PePy weekly| image:: https://static.pepy.tech/badge/MetaCerberus/week
-   :target: https://pepy.tech/project/MetaCerberus
+.. |Downloads PePy weekly| image:: https://static.pepy.tech/badge/metacerberus/week
+   :target: https://pepy.tech/project/metacerberus
 
 .. |BioConda Install Downloads| image:: https://anaconda.org/bioconda/`/badges/downloads.svg
    :target: https://anaconda.org/bioconda/`
@@ -39,16 +40,17 @@ MetaCerberus
 
 .. |Anaconda-Server License| image:: https://anaconda.org/bioconda/`/badges/license.svg
    :target: https://anaconda.org/bioconda/`      
-.. note:: MetaCerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
+
+.. note:: Metacerberus version 1.3 is the newest version via manual install due to current Conda/Mamba issue.
 
 About
 ============== 
-MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). MetaCerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
+Metacerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenomics, metatranscriptomic) data into knowledge. It is a start to finish python code for versatile analysis of the Functional Ontology Assignments for Metagenomes (FOAM), KEGG, CAZy/dbCAN, VOG, pVOG, PHROG, COG, and a variety of other databases including user customized databases via Hidden Markov Models (HMM) for functional annotation for complete metabolic analysis across the tree of life (i.e., bacteria, archaea, phage, viruses, eukaryotes, and whole ecosystems). Metacerberus also provides automatic differential statistics using DESeq2/EdgeR, pathway enrichments with GAGE, and pathway visualization with Pathview R.
 
 
-.. image:: image.jpg
+. image:: image.jpg
    :width: 600px
-   :target: https://github.com/raw-lab/MetaCerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
+   :target: https://github.com/raw-lab/metacerberus/assets/171077152/60121e49-b1d6-4b68-bcea-f19863a6d356
 
 General Terminal Command Line Links and Info for Novices
 =========================================================
@@ -89,7 +91,7 @@ Click `here`_ for the Ubuntu download page, or download in the Microsoft store.
 Installation
 =============
 
-Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
+Installing Metacerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 ---------------------------------------------------------------------------------
 .. important:: 
    You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click `here`_ for Conda download instructions.
@@ -101,14 +103,14 @@ In the command line, type:
 
 ::
 
-  git clone https://github.com/raw-lab/MetaCerberus.git 
-  cd MetaCerberus
+  git clone https://github.com/raw-lab/metacerberus.git 
+  cd metacerberus
   bash install_metacerberus.sh
-  conda activate MetaCerberus-1.3.0
-  `.py --download
+  conda activate metacerberus-1.3.0
+  metacerberus.py --download
 
 
-Installing MetaCerberus 1.2.1 and below (due to current Mamba and Conda errors)
+Installing Metacerberus 1.2.1 and below (due to current Mamba and Conda errors)
 -------------------------------------------------------------------------------------
 .. note:: 
    We will update this as soon as Mamba/Conda corrects this error. 
@@ -131,15 +133,15 @@ In command line, type:
 
   conda install mamba
 
-2. Install MetaCerberus with Mamba
+2. Install Metacerberus with Mamba
 
 In command line, type:
 
 ::
 
-   mamba create -n ` -c bioconda -c conda-forge `
-   conda activate `
-   `.py --setup
+   mamba create -n  -c bioconda -c conda-forge 
+   conda activate 
+   metacerberus.py --setup
 
 OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
  
@@ -148,8 +150,8 @@ OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
 In command line, type:
 ::
 
-   conda create -y -n `
-   conda activate `
+   conda create -y -n 
+   conda activate 
    conda config --env --set subdir osx-64
 
 2. Install Mamba, Python, and Pydantic inside the environment
@@ -159,13 +161,13 @@ In command line, type:
 
    conda install -y -c conda-forge mamba python=3.10 "pydantic<2"
 
-3. Install MetaCerberus with Mamba
+3. Install Metacerberus with Mamba
 
 In command line, type:
 ::
 
    mamba install -y -c bioconda -c conda-forge `
-   `.py --setup
+   metacerberus.py --setup
 
 
 .. note:: 
@@ -179,29 +181,29 @@ In command line, type:
 
 ::
 
-   conda create -n ` -c conda-forge -c bioconda ` -y
-   conda activate `
-   `.py --setup
+   conda create -n  -c conda-forge -c bioconda  -y
+   conda activate 
+   metacerberus.py --setup
 
 Overview 
 =============
 
-.. image:: MetaCerberus Workflow.jpg
+. image:: metacerberus Workflow.jpg
    :width: 600px
-   :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/workflow.jpg
+   :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/workflow.jpg
 
 General Info
 ---------------
 
-* MetaCerberus has **three** basic modes: 
+* Metacerberus has **three** basic modes: 
     1. Quality Control (QC) for raw reads
     2. Formatting/gene prediction
     3. Annotation 
-- MetaCerberus can use **three** different input files:
+- Metacerberus can use **three** different input files:
     1. Raw read data from any sequencing platform (Illumina, PacBio, or Oxford Nanopore)
     2. Assembled contigs, as MAGs, vMAGs, isolate genomes, or a collection of contigs
     3. Amino acid fasta (.faa), previously called pORFs
-- We offer customization, including running all databases together, individually or specifying select databases. For example, if a user wants to run prokaryotic or eukaryotic-specific KOfams, or an individual database alone such as dbCAN, both are easily customized within MetaCerberus.
+- We offer customization, including running all databases together, individually or specifying select databases. For example, if a user wants to run prokaryotic or eukaryotic-specific KOfams, or an individual database alone such as dbCAN, both are easily customized within Metacerberus.
 - In QC mode, raw reads are quality controlled with pre- and post-trim via `FastQC`_. Raw reads are then trimmed via data type; if the data is Illumina or PacBio, `fastp`_  is called, otherwise it assumes the data is Oxford Nanopore then `PoreChop`_ is utilized.
 - If Illumina reads are utilized, an optional bbmap step to remove the phiX174 genome is available or user provided contaminate genome. Phage phiX174 is a common contaminant within the Illumina platform as their library spike-in control. We highly recommend this removal if viral analysis is conducted, as it would provide false positives to ssDNA microviruses within a sample.
 - We include a ```--skip_decon``` option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.
@@ -244,8 +246,8 @@ Visualization of Outputs
 Annotation
 ===========
 
-.. image:: MetaCerberus-Rules.jpg
-   :target: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Rules.jpg
+. image:: metacerberus-Rules.jpg
+   :target: https://raw.githubusercontent.com/raw-lab/metacerberus/main/img/Rules.jpg
 
 - **Rule 1** is for finding high quality matches across databases. It is a score pre-filtering module for pORFs thresholds: which states that each pORF match to an HMM is recorded by default or a user-selected cut-off (i.e.,  e-value/bit scores) per database independently, or across all default databases (e.g, finding best hit), or per user specification of the selected database.
 - **Rule 2** is to avoid missing genes encoding proteins with dual domains that are not overlapping. It is imputed for non-overlapping dual domain module pORF threshold: if two HMM hits are non-overlapping from the same database, both are counted as long as they are within the default or user selected score (i.e., e-value/bit scores).
@@ -265,8 +267,8 @@ Genome examples
 
 ::
 
-   conda activate `
-   `.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
+   conda activate 
+   metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
 
 - Only KEGG/FOAM all
@@ -274,8 +276,8 @@ Genome examples
 
 ::
 
-   conda activate `
-   `.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
+   conda activate 
+   metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
 
 
 - Only KEGG/FOAM prokaryotic centric
@@ -283,8 +285,8 @@ Genome examples
 
 ::
 
-   conda activate `
-   `.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
+   conda activate 
+   metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
 
@@ -293,14 +295,14 @@ Genome examples
 
 ::
 
-   conda activate `
-   `.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
+   conda activate 
+   metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
 - Only Viral/Phage databases
 ::
 
-   conda activate `
-   `.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
+   conda activate 
+   metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
 .. tip::
 
@@ -310,8 +312,8 @@ Genome examples
 ~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
+   conda activate 
+   metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
 Illumina data
 ------------------
@@ -319,15 +321,15 @@ Illumina data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate 
+   metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
+   conda activate 
+   metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
 Nanopore data
 -----------------
@@ -335,16 +337,16 @@ Nanopore data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
+   conda activate 
+   metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
+   conda activate 
+   metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
 
 PacBio data
@@ -353,24 +355,24 @@ PacBio data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate 
+   metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ::
 
-   conda activate `
-   `.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
+   conda activate 
+   metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
 SUPER (both methods)
 ----------------------
 ::
 
-   conda activate `
-   `.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
+   conda activate 
+   metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
 
 .. important:: 
@@ -418,7 +420,7 @@ Available from Bioconda - external tool list
 .. _McNair et al. 2019: https://doi.org/10.1093/bioinformatics/btz265
 .. _Johnson et al. 2010: https://doi.org/10.1186/1471-2105-11-431
 
-MetaCerberus Databases
+Metacerberus Databases
 ==========================
 
 All pre-formatted databases are present at `OSF`_. 
@@ -428,45 +430,45 @@ All pre-formatted databases are present at `OSF`_.
 Database sources
 --------------------
 
-+-------------------+--------------+------------+---------------------------+-----------+---------------------------+
-| Database          |  Last Update |  Version   |  Publication              |           MetaCerberus Update Version |
-+===================+==============+============+===========================+=======================================+
-| `KEGG/KOfams`_    | 2024-01-01   |   Jan24    | `Aramaki et al. 2020`_     |    beta                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `FOAM/KOfams`_    | 2017         |    1       | `Prestat et al. 2014`_     |    beta                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `COG`_	           | 2020	        |   2020     | `Galperin et al. 2020`_    |    beta                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `dbCAN/CAZy`_     | 2023-08-02	  |    12	   | `Yin et al., 2012`_	     |    beta                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `VOG`_	           | 2017-03-03	  |    80	   | `Website`_	              |    beta                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `pVOG`_	        |  2016	     |    2016	   | `Grazziotin et al. 2017`_  |	 1.2                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `PHROG`_	        | 2022-06-15	  |    4	      | `Terizan et al., 2021`_	  |    1.2                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `PFAM`_	        | 2023-09-12	  |    36	   | `Mistry et al. 2020`_	     |    1.3                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `TIGRfams`_	     | 2018-06-19	  |    15	   |  `Haft et al. 2003`_	     |    1.3                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `PGAPfams`_	     | 2023-12-21	  |    14	   |  `Tatusova et al. 2016`_	  |    1.3                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `AMRFinder-fams`_ | 2024-02-05	  | 2024-02-05 |  `Feldgarden et al. 2021`_ |	  1.3                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `NFixDB`_	        | 2024-01-22	  |    2	      |  `Bellanger et al. 2024`_  |	  1.3                              |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-|  `GVDB`_	        | 2021	        |    1	      |  `Aylward et al. 2021`_	  |    1.3                               |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `Pads Arsenal`_	  | 2019-09-09	  |    1	      |  `Zhang et al. 2020`_	     |   Coming soon                        |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `efam-XC`_	     | 2021-05-21	  |    1	      |  `Zayed et al. 2021`_	     |    Coming soon                       |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `NMPFams`_	     | 2021	        |    1	      |  `Baltoumas et al. 2024`_  |   Coming soon                        |
-+-------------------+--------------+------------+----------------------------+--------------------------------------+
-| `MEROPS`_	        |  2017	     |    1 	   |  `Rawlings et al. 2018`_	  |    Coming soon                       |
-+-------------------+--------------+------------+-----------------------------------+-------------------------------+
-| `FESNov`_	        | 2024	        |    1	      |  `Rodríguez del Río et al. 2024`_ |  Coming soon                  |
-+-------------------+--------------+------------+-----------------------------------+-------------------------------+
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| Database          |  Last Update |  Version   |  Publication                     | Metacerberus Update Version    |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `KEGG/KOfams`_    | 2024-01-01   |   Jan24    | `Aramaki et al. 2020`_           |    beta                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `FOAM/KOfams`_    | 2017         |    1       | `Prestat et al. 2014`_           |    beta                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `COG`_	           | 2020	        |   2020     | `Galperin et al. 2020`_          |    beta                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `dbCAN/CAZy`_     | 2023-08-02	  |    12	   | `Yin et al., 2012`_	           |    beta                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `VOG`_	           | 2017-03-03	  |    80	   | `Website`_	                    |    beta                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `pVOG`_	        |  2016	     |    2016	   | `Grazziotin et al. 2017`_        |	 1.2                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `PHROG`_	        | 2022-06-15	  |    4	      | `Terizan et al., 2021`_	        |    1.2                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `PFAM`_	        | 2023-09-12	  |    36	   | `Mistry et al. 2020`_	           |    1.3                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `TIGRfams`_	     | 2018-06-19	  |    15	   |  `Haft et al. 2003`_	           |    1.3                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `PGAPfams`_	     | 2023-12-21	  |    14	   |  `Tatusova et al. 2016`_	        |    1.3                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `AMRFinder-fams`_ | 2024-02-05	  | 2024-02-05 |  `Feldgarden et al. 2021`_       |	  1.3                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `NFixDB`_	        | 2024-01-22	  |    2	      |  `Bellanger et al. 2024`_        |	  1.3                        |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+|  `GVDB`_	        | 2021	        |    1	      |  `Aylward et al. 2021`_	        |    1.3                         |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `Pads Arsenal`_	  | 2019-09-09	  |    1	      |  `Zhang et al. 2020`_	           |   Coming soon                  |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `efam-XC`_	     | 2021-05-21	  |    1	      |  `Zayed et al. 2021`_	           |    Coming soon                 |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `NMPFams`_	     | 2021	        |    1	      |  `Baltoumas et al. 2024`_        |   Coming soon                  |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `MEROPS`_	        |  2017	     |    1 	   |  `Rawlings et al. 2018`_	        |    Coming soon                 |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
+| `FESNov`_	        | 2024	        |    1	      | `Rodríguez del Río et al. 2024`_ |  Coming soon                   |
++-------------------+--------------+------------+----------------------------------+--------------------------------+
 
 .. _KEGG/KOfams: https://www.genome.jp/ftp/db/kofam/
 .. _FOAM/KOfams: https://osf.io/3uz2j/
@@ -523,16 +525,16 @@ Example Metadata sheet
 | HMM2 | Coffease | 
 +------+----------+
 
-MetaCerberus Options
+Metacerberus Options
 ======================
 .. important:: 
-   If the MetaCerberus environment is not used, make sure the dependencies are in PATH or specified in the config file.
+   If the Metacerberus environment is not used, make sure the dependencies are in PATH or specified in the config file.
 
 - Run ``metacerberus.py`` with the options required for your project.
 
 Usage of ``metacerberus.py``: 
 .. Note::
-   The following are different options/arguments to modify the execution of MetaCerberus.
+   The following are different options/arguments to modify the execution of Metacerberus.
 
 **Setup arguments:**
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -572,48 +574,48 @@ Usage of ``metacerberus.py``:
 
    - ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN...]`` = accepts one or greater options (represented by capitalized commands)
 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+              
-|Argument/Option              | Function                                                                                                                                | Usage Format                                                            | Accepted format     | # Options Accepted | Example (Type as one line)                                |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+---------------------+--------------------+----------------------------------------------------------+
-| ``-c`` or ``--config``      | Path to config file, command line takes priority                                                                                        | ``-c CONFIG`` or ``--config CONFIG``                                    | Path to config file | 1                  | ``-c path/to/config/file``                                |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+ 
-| ``--prodigal``              | Prokaryote nucleotide sequence (includes microbes, bacteriophage)                                                                       | ``--prodigal PRODIGAL [PRODIGAL ...]``                                  | Sequence file       | =>1                | ``--prodigal FILE1 FILE2...``                             |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--fraggenescan``          | Eukaryote nucleotide sequence (includes other viruses, works all around for everything)                                                 | ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN ...]``                      | Sequence file       | =>1                | ``--fraggenescan FILE1 FILE2...``                         |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--super``                 | Run sequence in **both** `--prodigal` and `--fraggenescan` modes                                                                        | ``--super SUPER [SUPER ...]``                                           | Sequence file       | =>1                | ``--super FILE1 FILE2...``                                |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--prodigalgv``            | Giant virus nucleotide sequence                                                                                                         | ``--prodigalgv PRODIGALGV [PRODIGALGV ...]``                            | Sequence file       | =>1                | ``--prodigalgv FILE1 FILE2...``                           |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--phanotate``             | Phage sequence                                                                                                                          | ``--phanotate PHANOTATE [PHANOTATE ...]``                               | Sequence file       | =>1                | ``--phanotate  FILE1 FILE2...``                           | 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--protein`` or ``--amino``| Protein Amino Acid sequence                                                                                                             | ``--protein PROTEIN [PROTEIN ...]`` or ``--amino PROTEIN [PROTEIN ...]``| Sequence file       | =>1                | ``--protein FILE1 FILE2...`` or ``--amino FILE1 FILE2...``| 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--hmmer-tsv``             | Annotations tsv file from HMMER (experimental)                                                                                          | ``--hmmer-tsv HMMER_TSV [HMMER_TSV ...]``                               | Sequence file       | =>1                | ``--hmmer-tsv FILE1 FILE2...``                            |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--class``                 | path to a tsv file which has class information for the samples. If this file is included, scripts will be included to run Pathview in R | ``--class CLASS``                                                       | Path to TSV file    | 1                  | ``--class TSV_FILE1``                                     |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--illumina``              | Specifies that the given FASTQ files are from Illumina                                                                                  | ``--illumina``                                                          | N/A                 | N/A                | ``metacerberus.py --illumina``                            |
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--nanopore``              | Specifies that the given FASTQ files are from Nanopore                                                                                  | ``--nanopore``                                                          | N/A                 | N/A                | ``metacerberus.py --nanopore``                            |  
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
-| ``--pacbio``                | Specifies that the given FASTQ files are from PacBio                                                                                    | ``--pacbio``                                                            | N/A                 | N/A                | ``metacerberus.py --pacbio``                              | 
-+-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-----------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+              
+|Argument/Option              | Function                                                                                                                                | Usage Format                                                            | Accepted format     | # Options Accepted | Example (Type as one line)                                                                |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``-c`` or ``--config``      | Path to config file, command line takes priority                                                                                        | ``-c CONFIG`` or ``--config CONFIG``                                    | Path to config file | 1                  | ``metacerberus.py -c path/to/config/file``                                                |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+ 
+| ``--prodigal``              | Prokaryote nucleotide sequence (includes microbes, bacteriophage)                                                                       | ``--prodigal PRODIGAL [PRODIGAL ...]``                                  | Sequence file       | =>1                | ``metacerberus.py --prodigal FILE1 FILE2...``                                             |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--fraggenescan``          | Eukaryote nucleotide sequence (includes other viruses, works all around for everything)                                                 | ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN ...]``                      | Sequence file       | =>1                | ``metacerberus.py --fraggenescan FILE1 FILE2...``                                         |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--super``                 | Run sequence in **both** `--prodigal` and `--fraggenescan` modes                                                                        | ``--super SUPER [SUPER ...]``                                           | Sequence file       | =>1                | ``metacerberus.py --super FILE1 FILE2...``                                                |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--prodigalgv``            | Giant virus nucleotide sequence                                                                                                         | ``--prodigalgv PRODIGALGV [PRODIGALGV ...]``                            | Sequence file       | =>1                | ``metacerberus.py --prodigalgv FILE1 FILE2...``                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--phanotate``             | Phage sequence                                                                                                                          | ``--phanotate PHANOTATE [PHANOTATE ...]``                               | Sequence file       | =>1                | ``metacerberus.py --phanotate  FILE1 FILE2...``                                           | 
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--protein`` or ``--amino``| Protein Amino Acid sequence                                                                                                             | ``--protein PROTEIN [PROTEIN ...]`` or ``--amino PROTEIN [PROTEIN ...]``| Sequence file       | =>1                | ``metacerberus.py --protein FILE1 FILE2...`` or ``metacerberus.py --amino FILE1 FILE2...``| 
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--hmmer-tsv``             | Annotations tsv file from HMMER (experimental)                                                                                          | ``--hmmer-tsv HMMER_TSV [HMMER_TSV ...]``                               | Sequence file       | =>1                | ``metacerberus.py --hmmer-tsv FILE1 FILE2...``                                            |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--class``                 | path to a tsv file which has class information for the samples. If this file is included, scripts will be included to run Pathview in R | ``--class CLASS``                                                       | Path to TSV file    | 1                  | ``metacerberus.py --class TSV_FILE1``                                                     |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--illumina``              | Specifies that the given FASTQ files are from Illumina                                                                                  | ``--illumina``                                                          | N/A                 | N/A                | ``metacerberus.py --illumina``                                                            |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--nanopore``              | Specifies that the given FASTQ files are from Nanopore                                                                                  | ``--nanopore``                                                          | N/A                 | N/A                | ``metacerberus.py --nanopore``                                                            |  
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
+| ``--pacbio``                | Specifies that the given FASTQ files are from PacBio                                                                                    | ``--pacbio``                                                            | N/A                 | N/A                | ``metacerberus.py --pacbio``                                                              |  
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
 
 **Output options:**
 ------------------------
 
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
-| Argument/Option | Function [DEFAULT]                                                                                          | Usage Format         | Accepted format            | # Options Accepted | Example (Type as one line)        |
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
-| ``--dir-out``   | path to output directory, defaults to "results-`" in current directory. [./results-`]                       | ``--dir-out DIR_OUT``| output file path           | 1                  | ``--dir-out path/to/output/file`` |
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
-| ``--replace``   | Flag to replace existing files. [False]                                                                     | ``--replace``        | ``metacerberus.py`` option | N/A                | ``metacerberus.py --replace``     |
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
-| ``--keep``      | Flag to keep temporary files. [False]                                                                       | ``--keep``           | ``metacerberus.py`` option | N/A                | ``metacerberus.py --keep``        | 
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
-| ``--tmpdir``    | Temp directory for RAY (experimental) [system tmp dir]                                                      | ``--tmpdir TMPDIR``  | ``metacerberus.py`` option | 1                  | ``--tmpdir TEMPFILE1``            |
-+-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+-----------------------------------+
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
+| Argument/Option | Function [DEFAULT]                                                                                          | Usage Format         | Accepted format            | # Options Accepted | Example (Type as one line)            |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
+| ``--dir-out``   | path to output directory, defaults to "results-`" in current directory. [./results-`]                       | ``--dir-out DIR_OUT``| output file path           | 1                  | ``--dir-out path/to/output/file``     |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
+| ``--replace``   | Flag to replace existing files. [False]                                                                     | ``--replace``        | ``metacerberus.py`` option | N/A                | ``metacerberus.py --replace``         |
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
+| ``--keep``      | Flag to keep temporary files. [False]                                                                       | ``--keep``           | ``metacerberus.py`` option | N/A                | ``metacerberus.py --keep``            | 
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
+| ``--tmpdir``    | Temp directory for RAY (experimental) [system tmp dir]                                                      | ``--tmpdir TMPDIR``  | ``metacerberus.py`` option | 1                  | ``metacerberus.py --tmpdir TEMPFILE1``|
++-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
 
 **Database options:**
 -------------------------
@@ -623,7 +625,7 @@ Usage of ``metacerberus.py``:
 +----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
 | ``--hmm``      | A list of databases for HMMER. Use the option ``--list-db`` for a list of available databases [KOFam_all] | ``--hmm HMM [HMM ...]`` | ``metacerberus.py`` option | =>1                | ``metacerberus.py --hmm DATABASE1 DATABASE2...``     |
 +----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
-| ``--db-path``  | Path to folder of databases [Default: under the library path of MetaCerberus]                             | ``--db-path DB_PATH``   | path to databases folder   | 1                  | ``--db-path path/to/databases/folder``               | 
+| ``--db-path``  | Path to folder of databases [Default: under the library path of metacerberus]                             | ``--db-path DB_PATH``   | path to databases folder   | 1                  | ``--db-path path/to/databases/folder``               | 
 +----------------+-----------------------------------------------------------------------------------------------------------+-------------------------+----------------------------+--------------------+------------------------------------------------------+
 
 **Optional Arguments:** 
