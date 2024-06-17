@@ -665,12 +665,142 @@ Usage of ``metacerberus.py``:
    Arguments/options that start with ``--`` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
 .. _syntax: https://goo.gl/R74nmi
 
+Outputs
+==========
+
+Outputs (/final folder)
+---------------------------
+
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| File extension | Description Summary                                                                    | MetaCerberus Update Version|
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .gff	        | General Feature Format	                                                                | 1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .gbk	        |  GenBank Format      	                                                                | 1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .fna	        |   Nucleotide FASTA file of the input contig sequences.                                 |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .faa	        | Protein FASTA file of the translated CDS/ORFs sequences.                               |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .ffn	        |  FASTA Feature Nucleotide file, the Nucleotide sequence of translated CDS/ORFs.        |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .html 	        |  Summary statistics and/or visualizations, in step 10 folder                           |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .txt           |	Statistics relating to the annotated features found.                                 |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| level.tsv	     |  Various levels of hierachical steps that is tab-separated file from various databases |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| rollup.tsv     |  	All levels of hierachical steps that is tab-separated file from various databases    |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+| .tsv           | 	Final Annotation summary, Tab-separated file of all features from various databases  |	1.3
++----------------+----------------------------------------------------------------------------------------+----------------------------+
+
+GAGE/Pathview
+===============
+
+- After processing the HMM files, MetaCerberus calculates a KO (KEGG Orthology) counts table from KEGG/FOAM for processing through GAGE and PathView.
+- GAGE is recommended for pathway enrichment followed by PathView for visualizing the metabolic pathways. A "class" file is required through the ``--class`` option to run this analysis. 
+
+.. :tip::
+   As we are unsure which comparisons you want to make thus, you have to make a class.tsv so the code will know the comparisons you want to make. 
+
+For example (class.tsv):
+-------------------------------
++---------+--------------+
+| Sample  |   Class      |
++---------+--------------+
+| 1A      | rhizobium    |
++---------+--------------+
+| 1B      | non-rhizobium|
++---------+--------------+
+
+- The output is saved under the step_10-visualizeData/combined/pathview folder. Also, **at least 4 samples** need to be used for this type of analysis.  
+  
+- GAGE and PathView also **require internet access** to be able to download information from a database. 
+- MetaCerberus will save a bash script 'run_pathview.sh' in the step_10-visualizeData/combined/pathview directory along with the KO Counts tsv files and the class file for running manually in case MetaCerberus was run on a cluster without access to the internet.
+
+Multiprocessing MultiComputing with RAY
+===========================================
+
+- MetaCerberus uses Ray for distributed processing. This is compatible with both multiprocessing on a single node (computer) or multiple nodes in a cluster.  
+MetaCerberus has been tested on a cluster using `Slurm`_.  
+.. _Slurm: https://github.com/SchedMD/slurm
+
+.. :important::
+   A script has been included to facilitate running MetaCerberus on Slurm. To use MetaCerberus on a Slurm cluster, setup your slurm script and run it using ```sbatch```.  
+
+::
+
+   sbatch example_script.sh
 
 
+Example Script:  
+-------------------
+::
+
+   #!/usr/bin/env bash
+
+   #SBATCH --job-name=test-job
+   #SBATCH --nodes=3
+   #SBATCH --tasks-per-node=1
+   #SBATCH --cpus-per-task=16
+   #SBATCH --mem=128MB
+   #SBATCH -e slurm-%j.err
+   #SBATCH -o slurm-%j.out
+   #SBATCH --mail-type=END,FAIL,REQUEUE
+
+   echo "====================================================="
+   echo "Start Time  : $(date)"
+   echo "Submit Dir  : $SLURM_SUBMIT_DIR"
+   echo "Job ID/Name : $SLURM_JOBID / $SLURM_JOB_NAME"
+   echo "Node List   : $SLURM_JOB_NODELIST"
+   echo "Num Tasks   : $SLURM_NTASKS total [$SLURM_NNODES nodes @ $SLURM_CPUS_ON_NODE CPUs/node]"
+   echo "======================================================"
+   echo ""
+
+   # Load any modules or resources here
+   conda activate metacerberus
+   # source the slurm script to initialize the Ray worker nodes
+   source ray-slurm-metacerberus.sh
+   # run MetaCerberus
+   metacerberus.py --prodigal [input_folder] --illumina --dir_out [out_folder]
+
+   echo ""
+   echo "======================================================"
+   echo "End Time   : $(date)"
+   echo "======================================================"
+   echo ""
+
+DESeq2 and Edge2 Type I errors
+==================================
+
+Both edgeR and DeSeq2 R have the highest sensitivity when compared to other algorithms that control type-I error when the FDR was at or below 0.1. EdgeR and DESeq2 all perform fairly well in simulation and via data splitting (so no parametric assumptions). Typical benchmarks will show limma having stronger FDR control across all types of datasets (it’s hard to beat the moderated t-test), and edgeR and DESeq2 having higher sensitivity for low counts (makes sense as limma has to filter these out / down-weight them to use the normal model on log counts). Further information about type I errors are present from Mike Love's vignette `here`_.
+.. _here: https://bioconductor.org/packages/devel/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#multi-factor-designs
 
 
+Contributing to MetaCerberus and Fungene
+===========================================
 
+Copyright
+===========
 
+This is copyrighted by University of North Carolina at Charlotte, Jose L Figueroa III, Eliza Dhungal, Madeline Bellanger, Cory R Brouwer and Richard Allen White III. All rights reserved. MetaCerberus is a bioinformatic tool that can be distributed freely for academic use only. Please contact us for commerical use. The software is provided “as is” and the copyright owners or contributors are not liable for any direct, indirect, incidental, special, or consequential damages including but not limited to, procurement of goods or services, loss of use, data or profits arising in any way out of the use of this software.
+
+Citing MetaCerberus
+======================
+
+If you are publishing results obtained using MetaCerberus, please cite:
+Publication
+-------------
+Figueroa III JL, Dhungel E, Bellanger M, Brouwer CR, White III RA. 2024.
+MetaCerberus: distributed highly parallelized HMM-based processing for robust functional annotation across the tree of life. `Bioinformatics`_.
+.. _Bioinformatics: https://doi.org/10.1093/bioinformatics/btae119
+
+Pre-print
+------------
+Figueroa III JL, Dhungel E, Brouwer CR, White III RA. 2023.
+MetaCerberus: distributed highly parallelized HMM-based processing for robust functional annotation across the tree of life. `bioRxiv`_.
+.. _bioRxiv: https://www.biorxiv.org/content/10.1101/2023.08.10.552700v1
 
 
 
