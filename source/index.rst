@@ -736,8 +736,10 @@ MetaCerberus has been tested on a cluster using `Slurm`_.
 .. _Slurm: https://github.com/SchedMD/slurm
 
 .. :important::
-   A script has been included to facilitate running MetaCerberus on Slurm. To use MetaCerberus on a Slurm cluster, setup your slurm script and run it using ```sbatch```.  
+   A script has been included to facilitate running MetaCerberus on Slurm. To use MetaCerberus on a Slurm cluster, setup your slurm script and run it using ``sbatch``.  
 
+Example command to run your slurm script:
+-----------------------------------------
 ::
 
    sbatch example_script.sh
