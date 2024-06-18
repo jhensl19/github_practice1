@@ -674,34 +674,31 @@ Usage of ``metacerberus.py``:
    Arguments/options that start with ``--`` can also be set in a config file (specified via ``-c``). Config file syntax allows: key=value, flag=true, stuff=[a,b,c] (for details, see `syntax`_. In general, **command-line values override config file values which override defaults.**
 .. _syntax: https://goo.gl/R74nmi
 
-Outputs
-==========
-
 Outputs (/final folder)
----------------------------
+==========================
 
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
 | File extension | Description Summary                                                                    | MetaCerberus Update Version|
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .gff	        | General Feature Format	                                                                | 1.3
+| .gff	        | General Feature Format	                                                                | 1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .gbk	        |  GenBank Format      	                                                                | 1.3
+| .gbk	        |  GenBank Format      	                                                                | 1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .fna	        |   Nucleotide FASTA file of the input contig sequences.                                 |	1.3
+| .fna	        |   Nucleotide FASTA file of the input contig sequences.                                 |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .faa	        | Protein FASTA file of the translated CDS/ORFs sequences.                               |	1.3
+| .faa	        | Protein FASTA file of the translated CDS/ORFs sequences.                               |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .ffn	        |  FASTA Feature Nucleotide file, the Nucleotide sequence of translated CDS/ORFs.        |	1.3
+| .ffn	        |  FASTA Feature Nucleotide file, the Nucleotide sequence of translated CDS/ORFs.        |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .html 	        |  Summary statistics and/or visualizations, in step 10 folder                           |	1.3
+| .html 	        |  Summary statistics and/or visualizations, in step 10 folder                           |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .txt           |	Statistics relating to the annotated features found.                                 |	1.3
+| .txt           |	Statistics relating to the annotated features found.                                 |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| level.tsv	     |  Various levels of hierachical steps that is tab-separated file from various databases |	1.3
+| level.tsv	     |  Various levels of hierachical steps that is tab-separated file from various databases |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| rollup.tsv     |  	All levels of hierachical steps that is tab-separated file from various databases    |	1.3
+| rollup.tsv     |  	All levels of hierachical steps that is tab-separated file from various databases    |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
-| .tsv           | 	Final Annotation summary, Tab-separated file of all features from various databases  |	1.3
+| .tsv           | 	Final Annotation summary, Tab-separated file of all features from various databases  |	1.3                        |
 +----------------+----------------------------------------------------------------------------------------+----------------------------+
 
 GAGE/Pathview
