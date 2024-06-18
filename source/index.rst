@@ -51,7 +51,7 @@ MetaCerberus transforms raw sequencing (i.e. genomic, transcriptomics, metagenom
 .. image:: https://raw.githubusercontent.com/raw-lab/MetaCerberus/main/img/Screenshot_20240614_205914_Gallery.jpg
    :width: 600px
 
-General Terminal Command Line Links and Info for Novices
+General Terminal Info and Help Links for Novices
 =========================================================
 The following are links to helpful webpages based on your operating system. These contain basic starter info for those who have no previous experience with terminals or commands. 
 
@@ -60,13 +60,13 @@ Operating System
 * **Linux** 
 ~~~~~~~~~~~~
 
-`Here`_ , you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here <3_>`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
-.. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+.. _3: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
-Other informative pages can be found `here <1_>`_ and `here <marq_>`_.
+Other informative pages can be found `here <4_>`_ and `here <marq_>`_.
 
-.. _1: https://ryanstutorials.net/linuxtutorial/
+.. _4: https://ryanstutorials.net/linuxtutorial/
 .. _marq: https://www.marquette.edu/high-performance-computing/linux-intro.php
 
 * **Mac**
@@ -79,13 +79,13 @@ Click `here`_ for terminal basics.
 * **Windows - MUST use Ubuntu**
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click `here`_ for the Ubuntu download page, or download in the Microsoft store.
+Click `here <5_>`_ for the Ubuntu download page, or download in the Microsoft store.
 
-.. _here: https://ubuntu.com/desktop/wsl 
+.. _5: https://ubuntu.com/desktop/wsl 
 
-`Here`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
+`Here <6_>`_, you can find a tutorial covering the basics of the Linux command line, using Ubuntu.
 
-.. _Here: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
+.. _6: https://ubuntu.com/tutorials/command-line-for-beginners#1-overview
 
 Installation
 =============
@@ -93,19 +93,19 @@ Installation
 Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 ---------------------------------------------------------------------------------
 .. important:: 
-   You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click `here`_ for Conda download instructions.
+   You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click `here <7_>`_ for Conda download instructions.
    For each command given, enter the first line of the command, then press ENTER. Once the operation completes, the terminal prompt will reappear (blinking vertical line where you type). Proceed to the next line of the given command, press ENTER. Continue as such, line by line, until the entire given command has been entered.  
 
-.. _here: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html 
+.. _7: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html 
 
 In the command line, type: 
 
 ::
 
-  git clone https://github.com/raw-lab/metacerberus.git 
+  git clone https://github.com/raw-lab/MetaCerberus.git 
   cd metacerberus
   bash install_metacerberus.sh
-  conda activate metacerberus-1.3.0
+  conda activate MetaCerberus-1.3.0
   metacerberus.py --download
 
 
@@ -138,8 +138,8 @@ In command line, type:
 
 ::
 
-   mamba create -n  -c bioconda -c conda-forge 
-   conda activate 
+   mamba create -n metacerberus -c bioconda -c conda-forge metacerberus
+   conda activate metacerberus
    metacerberus.py --setup
 
 OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
@@ -149,8 +149,8 @@ OSX-ARM (M1/M2) [if using a Mac with ARM architecture]
 In command line, type:
 ::
 
-   conda create -y -n 
-   conda activate 
+   conda create -y -n metacerberus 
+   conda activate metacerberus
    conda config --env --set subdir osx-64
 
 2. Install Mamba, Python, and Pydantic inside the environment
@@ -165,7 +165,7 @@ In command line, type:
 In command line, type:
 ::
 
-   mamba install -y -c bioconda -c conda-forge `
+   mamba install -y -c bioconda -c conda-forge metacerberus
    metacerberus.py --setup
 
 
@@ -180,8 +180,8 @@ In command line, type:
 
 ::
 
-   conda create -n  -c conda-forge -c bioconda  -y
-   conda activate 
+   conda create -n metacerberus -c conda-forge -c bioconda metacerberus -y
+   conda activate metacerberus
    metacerberus.py --setup
 
 Overview 
@@ -207,15 +207,15 @@ General Info
 - We include a ``--skip_decon`` option to skip the filtration of phiX174, which may remove common k-mers that are shared in ssDNA phages.
 - In the formatting and gene prediction stage, contigs and genomes are checked for N repeats. These N repeats are removed by default.
 - We impute contig/genome statistics (e.g., N50, N90, max contig) via our custom module `Metaome Stats`_.
-- Contigs can be converted to pORFs using `Prodigal <1_>`_ , `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
+- Contigs can be converted to pORFs using `Prodigal <8_>`_ , `FragGeneScanRs`_, and `Prodigal-gv`_ as specified by user preference.
 - Scaffold annotation is not recommended due to N's providing ambiguous annotation.
 - Both Prodigal and FragGeneScanRs can be used via our ``--super`` option, and we recommend using FragGeneScanRs for samples rich in eukaryotes.
-- FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10<sup>-9</sup> ).
+- FragGeneScanRs found more ORFs and KOs than Prodigal for a stimulated eukaryote rich metagenome. HMMER searches against the above databases via user specified bitscore and e-values or our minimum defaults (i.e., bitscore = 25, e-value = 1 x 10\ :sup:`-9`).
 .. _fastp: https://doi.org/10.1093/bioinformatics/bty560
 .. _PoreChop: https://github.com/rrwick/Porechop
 .. _FastQC: https://github.com/s-andrews/FastQC
 .. _Metaome Stats: https://github.com/raw-lab/metaome_stats 
-.. _1: https://anaconda.org/bioconda/prodigal
+.. _8: https://anaconda.org/bioconda/prodigal
 .. _FragGeneScanRs: https://github.com/unipept/FragGeneScanRs/
 .. _Prodigal-gv: https://github.com/apcamargo/prodigal-gv
 
@@ -265,7 +265,7 @@ Genome examples
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm ALL --dir_out lambda_dir
 
 
@@ -274,7 +274,7 @@ Genome examples
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm KOFam_all --dir_out lambda_ko-only_dir
 
 
@@ -283,7 +283,7 @@ Genome examples
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal ecoli.fna --hmm KOFam_prokaryote --dir_out ecoli_ko-only_dir
 
 
@@ -293,13 +293,13 @@ Genome examples
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --fraggenescan human.fna --hmm KOFam_eukaryote --dir_out human_ko-only_dir
 
 - Only Viral/Phage databases
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm VOG, PHROG --dir_out lambda_vir-only_dir
 
 .. tip::
@@ -311,7 +311,7 @@ Genome examples
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal lambda.fna --hmm Custom.hmm --dir_out lambda_vir-only_dir
 
 Illumina data
@@ -321,7 +321,7 @@ Illumina data
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal [input_folder] --illumina --meta --dir_out [out_folder] 
 
 - Eukaryotes and Viruses metagenomes/metatranscriptomes
@@ -329,7 +329,7 @@ Illumina data
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --fraggenescan [input_folder] --illumina --meta --dir_out [out_folder] 
 
 Nanopore data
@@ -339,7 +339,7 @@ Nanopore data
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --prodigal [input_folder]  --nanopore --meta --dir_out [out_folder]
 
 
@@ -348,7 +348,7 @@ Nanopore data
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --fraggenescan [input_folder] --nanopore --meta --dir_out [out_folder] 
 
 
@@ -359,7 +359,7 @@ PacBio data
 
 ::
 
-   conda activate 
+   conda activate metacerberus 
    metacerberus.py --prodigal [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
@@ -368,7 +368,7 @@ PacBio data
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --fraggenescan [input_folder]  --pacbio --meta --dir_out [out_folder]
 
 
@@ -377,7 +377,7 @@ SUPER (both methods)
 
 ::
 
-   conda activate 
+   conda activate metacerberus
    metacerberus.py --super [input_folder]  --pacbio/--nanopore/--illumina --meta --dir_out [out_folder]
 
 
@@ -394,13 +394,13 @@ Available from Bioconda - external tool list
 +---------------------+------------------+------------------------------+
 | `Fastqc`_           |    0.12.1        |            None              |
 +---------------------+------------------+------------------------------+
-| `Fastp <2_>`_            |    0.23.4        |         `Chen et al. 2018`_  | 
+| `Fastp <9_>`_       |    0.23.4        |    `Chen et al. 2018`_       | 
 +---------------------+------------------+------------------------------+
 | `PoreChop`_         |    0.2.4         |              None            |
 +---------------------+------------------+------------------------------+
 | `bbmap`_            |     39.06        |              None            |
 +---------------------+------------------+------------------------------+
-| `Prodigal`_         |     2.6.3        |         `Hyatt et al. 2010`_ | 
+| `Prodigal`_         |     2.6.3        |     `Hyatt et al. 2010`_     | 
 +---------------------+------------------+------------------------------+
 | `FragGeneScanRs`_   | v1.1.0           | `Van der Jeugt et al. 2022`_ |
 +---------------------+------------------+------------------------------+
@@ -412,7 +412,7 @@ Available from Bioconda - external tool list
 +---------------------+------------------+------------------------------+
 
 .. _Fastqc: https://github.com/s-andrews/FastQC
-.. _2: https://github.com/OpenGene/fastp
+.. _9: https://github.com/OpenGene/fastp
 .. _PoreChop: https://github.com/rrwick/Porechop
 .. _bbmap: https://github.com/BioInfoTools/BBMap
 .. _Prodigal: https://github.com/hyattpd/Prodigal
