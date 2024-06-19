@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MetaCerberus
-=============
+Welcome to MetaCerberus ReadTheDocs!
+========================================
 
 |Paper| |Pre-print| |Downloads PePY overall| |Downloads PePy monthly| |Downloads PePy weekly| |BioConda Install Downloads| |Version| |Anaconda-Server Latest Release date| |Anaconda-Server Relative Release date| |Anaconda-Server Platforms| |Anaconda-Server License|
 
@@ -93,7 +93,7 @@ Installation
 Installing MetaCerberus 1.3 manually due to Mamba/Conda issue (Newest Version)
 ---------------------------------------------------------------------------------
 .. important:: 
-   You still need to have Mamba and Conda installed. Just can't use Mamba/Conda directly for the new version, currently. Click `here <7_>`_ for Conda download instructions.
+   You still need to have Mamba and Conda installed. You cannot just use Mamba/Conda directly for the new version, currently. Click `here <7_>`_ for Conda download instructions.
    For each command given, enter the first line of the command, then press ENTER. Once the operation completes, the terminal prompt will reappear (blinking vertical line where you type). Proceed to the next line of the given command, press ENTER. Continue as such, line by line, until the entire given command has been entered.  
 
 .. _7: https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html 
@@ -170,7 +170,7 @@ In command line, type:
 
 
 .. note:: 
-   Mamba is the fastest installer. Anaconda or miniconda can be slow. Also, install Mamba from Conda, NOT from pip. The Mamba from pip doesn't work for install. 
+   Mamba is the fastest installer. Anaconda or miniconda can be slow. Also, install Mamba from Conda, **NOT from pip. The Mamba from pip doesn't work for install.** 
 
 Option 2) Anaconda - Linux/OSX-64 Only
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -436,6 +436,7 @@ All pre-formatted databases are present at `OSF`_.
 
 Database sources
 ---------------------------------------------------------------------------------
+
 +-------------------+--------------+------------+----------------------------------+--------------------------------+
 | Database          |  Last Update |  Version   |  Publication                     | Metacerberus Update Version    |
 +-------------------+--------------+------------+----------------------------------+--------------------------------+
@@ -475,6 +476,7 @@ Database sources
 +-------------------+--------------+------------+----------------------------------+--------------------------------+
 | `FESNov`_	        | 2024	        |    1	      | `Rodríguez del Río et al. 2024`_ |     Coming soon                |
 +-------------------+--------------+------------+----------------------------------+--------------------------------+
+
 .. _KEGG/KOfams: https://www.genome.jp/ftp/db/kofam/
 .. _FOAM/KOfams: https://osf.io/3uz2j/
 .. _COG: https://ftp.ncbi.nlm.nih.gov/pub/COG/COG2020/data/
@@ -532,6 +534,7 @@ Example Metadata sheet
 
 Metacerberus Options
 ======================
+
 .. important:: 
    If the Metacerberus environment is not used, make sure the dependencies are in PATH or specified in the config file.
 
@@ -592,7 +595,7 @@ Usage of ``metacerberus.py``:
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
 | ``--fraggenescan``          | Eukaryote nucleotide sequence (includes other viruses, works all around for everything)                                                 | ``--fraggenescan FRAGGENESCAN [FRAGGENESCAN ...]``                      | Sequence file       | =>1                | ``metacerberus.py --fraggenescan FILE1 FILE2...``                                         |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
-| ``--super``                 | Run sequence in **both** `--prodigal` and `--fraggenescan` modes                                                                        | ``--super SUPER [SUPER ...]``                                           | Sequence file       | =>1                | ``metacerberus.py --super FILE1 FILE2...``                                                |
+| ``--super``                 | Runs sequence in **both** `--prodigal` and `--fraggenescan` modes                                                                        | ``--super SUPER [SUPER ...]``                                           | Sequence file       | =>1                | ``metacerberus.py --super FILE1 FILE2...``                                                |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
 | ``--prodigalgv``            | Giant virus nucleotide sequence                                                                                                         | ``--prodigalgv PRODIGALGV [PRODIGALGV ...]``                            | Sequence file       | =>1                | ``metacerberus.py --prodigalgv FILE1 FILE2...``                                           |
 +-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+---------------------+--------------------+-------------------------------------------------------------------------------------------+
@@ -617,7 +620,7 @@ Usage of ``metacerberus.py``:
 +-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
 | Argument/Option | Function [DEFAULT]                                                                                          | Usage Format         | Accepted format            | # Options Accepted | Example (Type as one line)            |
 +-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
-| ``--dir-out``   | path to output directory, defaults to "results-`" in current directory. [./results-`]                       | ``--dir-out DIR_OUT``| output file path           | 1                  | ``--dir-out path/to/output/file``     |
+| ``--dir-out``   | path to output directory, defaults to "results-metacerberus" in current directory. [./results-`]            | ``--dir-out DIR_OUT``| output file path           | 1                  | ``--dir-out path/to/output/file``     |
 +-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
 | ``--replace``   | Flag to replace existing files. [False]                                                                     | ``--replace``        | ``metacerberus.py`` option | N/A                | ``metacerberus.py --replace``         |
 +-----------------+-------------------------------------------------------------------------------------------------------------+----------------------+----------------------------+--------------------+---------------------------------------+
